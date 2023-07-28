@@ -255,7 +255,7 @@ main > article > .article-nav-section > .article-nav-button:nth-child(2) {
   border-left: 1px solid var(--border-color);
 }
 
-@media(max-width: 1200px) {    
+@media(max-width: 720px) {    
   #nav-mobile-section {
     flex-basis: calc(100% * 0.75);
   }
@@ -276,7 +276,7 @@ main > article > .article-nav-section > .article-nav-button:nth-child(2) {
   main > article {
     grid-template-columns: none;
     grid-template-rows: 1.5fr repeat(3, 0.75fr) 0.25fr;
-    height: max(900px, 100%);
+    height: max(720px, 100%);
   }
    
   main > article > .article-title-section > h2 {
