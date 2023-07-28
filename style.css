@@ -42,7 +42,6 @@ a {
   text-decoration: none;
 }
 
-
 nav {
   display: flex;
   width: 100%;
@@ -112,9 +111,9 @@ nav .nav-section {
   gap: 6rem; 
 }
 
-#nav-social-section {
+/* #nav-social-section {
   gap: 3rem;
-}
+} */
 
 main {
   flex-grow: 1;
@@ -194,7 +193,7 @@ main > article:nth-child(2) > .article-image-section {
 
 main > article > .article-image-section {
   background-position: center;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 
@@ -226,15 +225,15 @@ main > article > .article-title-section * {
 main > article > .article-title-section > h2 {
   flex-basis: 50%;
   font-family: "Montserrat", sans-serif;
-  font-size: 3.5rem;
-  line-height: 3rem;
+  font-size: 2.3rem;
+  line-height: 2.0rem;
   margin: 0px;
   text-transform: uppercase;
 }
 
 main > article > .article-title-section > i {
   color: rgba(255, 255, 255, 0.75);
-  font-size:  4rem;
+  font-size:  2.5rem;
 }
 
 main > article > .article-nav-section > .article-nav-button {
@@ -276,7 +275,7 @@ main > article > .article-nav-section > .article-nav-button:nth-child(2) {
   main > article {
     grid-template-columns: none;
     grid-template-rows: 1.5fr repeat(3, 0.75fr) 0.25fr;
-    height: max(720px, 100%);
+    height: max(1200px, 100%);
   }
    
   main > article > .article-title-section > h2 {
@@ -321,6 +320,10 @@ main > article > .article-nav-section > .article-nav-button:nth-child(2) {
   nav[data-toggled="true"] > #nav-mobile-section {  
     transform: translateY(0%);
   }
+  nav {
+    /* Add responsive styles for navigation */
+    flex-direction: column;
+  }
 
   nav[data-toggled="true"] > #nav-toggle-button {
     border-left: none;
@@ -343,6 +346,7 @@ main > article > .article-nav-section > .article-nav-button:nth-child(2) {
   #nav-mobile-section {
     background-color: var(--background-color);
     flex-direction: column;
+    flex-basis: 100%;
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -396,7 +400,7 @@ main > article > .article-nav-section > .article-nav-button:nth-child(2) {
   }
   
   main > article > .article-description-section > p {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -422,5 +426,38 @@ main > article .yt-link > i {
   list-style-type: disc;
   /* margin-left: 20px; */
   color: rgba(255, 255, 255, 0.671);
-  font-size: 1.25em;
+  font-size: 1.2em;
+}
+
+.article-description-section {
+  /* Remove the max-height property from the container */
+  /* max-height: 10vh; */
+  /* overflow: auto; */
+
+  /* Add margin or padding to create space between paragraphs */
+  padding: 2rem;
+}
+
+.article-description-section p{
+  /* Set max-height and overflow for the <p> element */
+  max-height: 70vh; /* You can adjust this value as needed */
+  /* overflow: auto; */
+  /* word-wrap: break-word; */
+}
+
+.scrollable-content {
+  max-height: 390px; /* Set the desired height for scrolling */
+  overflow-y: auto;
+}
+
+
+.highlight {
+  background-color: rgb(117, 252, 223); /* Set the background color for highlighting */
+  color: rgb(0, 5, 73); /* Change the text color inside the highlighted area */
+  font-weight: bold; /* Make the text bold */
+  /* border: 1px solid orange; Add an orange border around the highlighted area */
+  /* padding: 5px; Add some padding around the highlighted area */
+  /* border-radius: 5px; Round the corners of the highlighted area */
+  text-decoration: underline; /* Underline the text inside the highlighted area */
+  /* You can continue adding more styles as needed */
 }
