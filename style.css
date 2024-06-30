@@ -462,6 +462,20 @@ main > article .yt-link > i {
   /* You can continue adding more styles as needed */
 }
 
+main > article > .article-nav-section > .article-nav-button {
+  background-color: transparent;
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
 
 main > article > .article-nav-section > .article-nav-button:hover {
   background-color: rgba(255, 255, 255, 0.1);
