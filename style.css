@@ -126,7 +126,7 @@ main > article {
   width: 100%;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows: 3fr 1fr 0.5fr; 
   position: absolute;
   left: 0px;
   top: 0px;
@@ -460,4 +460,17 @@ main > article .yt-link > i {
   /* border-radius: 5px; Round the corners of the highlighted area */
   text-decoration: underline; /* Underline the text inside the highlighted area */
   /* You can continue adding more styles as needed */
+}
+
+
+main > article > .article-nav-section > .article-nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+main > article > .article-nav-section > .article-nav-button i {
+  font-size: 1.5rem;
+}
+
+main > article > .article-nav-section > .article-nav-button span {
+  font-size: 1rem;
 }
