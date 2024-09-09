@@ -236,6 +236,15 @@ main > article > .article-title-section > i {
   font-size:  2.5rem;
 }
 
+main > article > .article-nav-section {
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: row; /* Change to row to place buttons side by side */
+  justify-content: space-between; /* Spread out the buttons */
+  align-items: flex-end; /* Align buttons to the bottom */
+  padding: 0 1rem 1rem; /* Add padding to the bottom and sides */
+}
+
 main > article > .article-nav-section > .article-nav-button {
   background-color: transparent;
   flex-grow: 1;
@@ -244,6 +253,9 @@ main > article > .article-nav-section > .article-nav-button {
   color: rgba(255, 255, 255, 0.75);
   font-size: 3rem;
   cursor: pointer;
+  transition: background-color 400ms ease;
+  padding: 0.5rem;
+  flex: 0 0 auto; /* Prevent buttons from growing or shrinking */
 }
 
 main > article > .article-nav-section > .article-nav-button:hover {
@@ -254,153 +266,88 @@ main > article > .article-nav-section > .article-nav-button:nth-child(2) {
   border-left: 1px solid var(--border-color);
 }
 
-@media(max-width: 720px) {    
-  #nav-mobile-section {
-    flex-basis: calc(100% * 0.75);
+@media(max-width: 800px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
   }
 
-  #nav-logo-section {
-    flex-basis: calc(100% * 0.25);
+  #nav-mobile-section {
+    width: 100%;
+    display: none;
   }
-  
-  #nav-link-section {
-    flex-basis: calc(100% / 3);
-    gap: 3rem;
+
+  nav[data-toggled="true"] #nav-mobile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #nav-toggle-button {
+    display: block;
+    margin: 1rem;
+  }
+
+  main > article {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  .article-image-section {
+    height: 200px;
+  }
+
+  .article-description-section {
+    padding: 1rem;
+  }
+
+  .article-title-section > h2 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+
+  .article-nav-section {
+    flex-direction: row;
+    justify-content: space-between; /* Spread out buttons on mobile */
+    padding: 0.5rem 1rem; /* Add some padding around the buttons */
+    position: fixed; /* Fix the position at the bottom */
+    bottom: 0; /* Align to the bottom of the viewport */
+    left: 0;
+    right: 0;
+    background-color: var(--background-color); /* Match the background color */
+    z-index: 10; /* Ensure it's above other content */
+  }
+
+  .article-nav-button {
+    font-size: 2rem; /* Slightly smaller font size for mobile */
+    padding: 0.5rem;
+  }
+
+  .scrollable-content {
+    max-height: 300px;
   }
 
   main {
-    overflow-y: auto;
-  }
-  
-  main > article {
-    grid-template-columns: none;
-    grid-template-rows: 1.5fr repeat(3, 0.75fr) 0.25fr;
-    height: max(1200px, 100%);
-  }
-   
-  main > article > .article-title-section > h2 {
-    font-size: 3rem; 
-    line-height: 2.6rem;
-  }
-  
-  main > article > .article-title-section > i {
-    font-size: 3rem; 
-  }
-  
-  main > article > .article-description-section,
-  main > article > .article-nav-section {
-    border-left: none;
-  }
-
-  main > article > .article-image-section {
-    order: 1;
-  }
-  
-  main > article > .article-title-section {
-    border-bottom: 1px solid var(--border-color);
-    order: 2;
-  }
-  
-  main > article > .article-description-section {
-    justify-content: center;
-    order: 3;
-  }
-  
-  main > article > .article-nav-section {
-    border-bottom: 1px solid var(--border-color);
-    order: 4;
+    padding-bottom: 60px; /* Adjust this value based on the height of your nav buttons */
   }
 }
 
-@media(max-width: 800px) {  
-  nav {
-    justify-content: space-between;  
-  }
-  
-  nav[data-toggled="true"] > #nav-mobile-section {  
-    transform: translateY(0%);
-  }
-  nav {
-    /* Add responsive styles for navigation */
-    flex-direction: column;
-  }
-
-  nav[data-toggled="true"] > #nav-toggle-button {
-    border-left: none;
-  }
-
-  nav[data-transitionable="true"] > #nav-mobile-section {
-    transition: transform 400ms ease;
-  }
-  
-  nav .nav-section {
-    border-left: none;
-    padding: 1.5rem 1rem;
-  }
-  
-  #nav-logo-section > a > i {
+@media(max-width: 480px) {
+  .article-title-section > h2 {
     font-size: 1.5rem;
-    margin-left: 1rem;
+    line-height: 1.7rem;
   }
-  
-  #nav-mobile-section {
-    background-color: var(--background-color);
-    flex-direction: column;
-    flex-basis: 100%;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    transform: translateY(-100%);
-    font-size: 2.5rem;
-  } 
-  
-  #nav-toggle-button {
-    display: flex;
-  }  
-  
-  #nav-link-section {
-    flex-basis: 60%;
-    flex-direction: column;
-    gap: 4rem;
+
+  .article-description-section > p {
+    font-size: 1rem;
   }
-  
-  #nav-link-section > a {
-    font-size: 3rem; 
+
+  .bullet-list {
+    font-size: 1rem;
   }
-  
-  #nav-social-section > a {
-    font-size: 2rem; 
-  }  
-  
-  #nav-contact-section {
-    padding-bottom: 4rem;
-  }
-  
-  main > article {
-    grid-template-rows: 1fr repeat(4, 0.5fr);
-    height: max(700px, 100%);
-  }
-  
-  main > article > .article-title-section {
-    padding: 2rem;
-  }
-  
-  main > article > .article-title-section > h2 {
-    flex-basis: 70%;
-    font-size: 1.75em; 
-    line-height: 1.5rem;
-  }
-  
-  main > article > .article-title-section > i {
-    font-size: 2rem; 
-  }
-  
-  main > article > .article-description-section {
-    padding: 2rem;
-  }
-  
-  main > article > .article-description-section > p {
-    font-size: 1.2rem;
+
+  .highlight {
+    font-size: 0.9rem;
   }
 }
 
