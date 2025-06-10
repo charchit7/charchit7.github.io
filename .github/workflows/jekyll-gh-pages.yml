@@ -47,6 +47,8 @@ jobs:
           compression-level: 6
           overwrite: false
           include-hidden-files: false
+      - name: List build directory
+        run: ls -la _site/
 
   # Deployment job
   deploy:
