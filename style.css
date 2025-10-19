@@ -177,7 +177,7 @@ main > article > .article-nav-section {
 }
 
 main > article:first-child > .article-image-section {
-  background-image: url("https://raw.githubusercontent.com/charchit7/charchit7.github.io/refs/heads/main/my_pic.jpg");
+  background-image: url("./cs_pic.png");
 }
 
 main > article:nth-child(3) > .article-image-section {
