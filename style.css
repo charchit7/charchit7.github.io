@@ -178,6 +178,8 @@ main > article > .article-nav-section {
 
 main > article:first-child > .article-image-section {
   background-image: url("./cs_pic.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 main > article:nth-child(3) > .article-image-section {
