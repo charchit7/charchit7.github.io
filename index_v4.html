@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charchit Sharma | ML Engineer & Researcher</title>
+    <meta name="description"
+        content="Charchit Sharma - Senior Machine Learning Engineer specializing in generative learning and large-scale data understanding.">
+    <meta name="keywords" content="Machine Learning, Deep Learning, AI Research, Computer Vision, Generative AI">
+    <meta name="author" content="Charchit Sharma">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/charchit7/profile/main/star.png" type="image/png">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style_v4.css">
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Aurora Background -->
+    <div class="aurora-bg">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+    </div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="#about" class="nav-pill"><span>About</span></a>
+                <a href="#updates" class="nav-pill"><span>Updates</span></a>
+                <a href="#interests" class="nav-pill"><span>Interests</span></a>
+                <a href="https://drive.google.com/file/d/1a-115A7ZQO051T_Zk9bhc6h0hxM6pKyI/view?usp=sharing"
+                    target="_blank" class="nav-cta">Resume</a>
+                <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <div class="hero-wrapper">
+                <div class="hero-left">
+                    <div class="status-line">
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            Open to Collaboration
+                        </div>
+                        <span class="location">📍 India</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="hero-greeting">Hi there, I'm</span>
+                        <span class="hero-name" id="typedName"></span>
+                        <span class="typewriter-cursor"></span>
+                    </h1>
+
+                    <div class="role-tags">
+                        <span class="role-tag"><i class="fa-solid fa-brain"></i>ML Engineer</span>
+                        <span class="role-tag"><i class="fa-solid fa-microscope"></i>Researcher</span>
+                        <span class="role-tag"><i class="fa-solid fa-wand-magic-sparkles"></i>Generative AI</span>
+                    </div>
+
+                    <p class="hero-desc">
+                        Senior Machine Learning Engineer at <a href="https://idfy.com/" target="_blank"
+                            rel="noopener">IDfy</a>,
+                        building intelligent systems for identity verification. Previously a Researcher at
+                        <a href="https://avataar.ai/" target="_blank" rel="noopener">Avataar.ai</a> and Research
+                        Assistant at
+                        <a href="https://www.iith.ac.in/" target="_blank" rel="noopener">IIT Hyderabad</a> under
+                        <a href="https://people.iith.ac.in/vineethnb/" target="_blank" rel="noopener">Prof. Vineeth N
+                            Balasubramanian</a>.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="https://drive.google.com/file/d/1a-115A7ZQO051T_Zk9bhc6h0hxM6pKyI/view?usp=sharing"
+                            target="_blank" class="btn btn-glow">
+                            View Resume
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&hl=en" target="_blank"
+                            class="btn btn-outline">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            Publications
+                        </a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="https://twitter.com/charchits7" target="_blank" class="social-link"
+                            aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://github.com/charchit7" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/charchitsharma7/" target="_blank" class="social-link"
+                            aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/charchits7/" target="_blank" class="social-link"
+                            aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="mailto:charchit.research@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="visual-container">
+                        <div class="morph-blob"></div>
+                        <div class="orbit-ring">
+                            <span class="orbit-dot orbit-dot-1"></span>
+                            <span class="orbit-dot orbit-dot-2"></span>
+                        </div>
+
+                        <div class="image-frame">
+                            <img src="./cs_pic.png" alt="Charchit Sharma" class="profile-img">
+                        </div>
+
+                        <!-- Floating Info Cards -->
+                        <div class="float-card float-card-1">
+                            <span class="float-icon">🎓</span>
+                            <div class="float-info">
+                                <span class="float-label">Research</span>
+                                <span class="float-value">IIT Hyderabad</span>
+                            </div>
+                        </div>
+
+                        <div class="float-card float-card-2">
+                            <span class="float-icon">🚀</span>
+                            <div class="float-info">
+                                <span class="float-label">Currently</span>
+                                <span class="float-value">Sr. ML Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updates Section -->
+        <section class="section" id="updates">
+            <div class="section-header reveal">
+                <div class="section-number">01</div>
+                <h2 class="section-title">Recent Updates</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item reveal delay-1">
+                    <div class="timeline-card">
+                        <div class="timeline-date">December 2024</div>
+                        <p class="timeline-text">
+                            Joined <a href="https://idfy.com/" target="_blank" rel="noopener">IDfy</a> as a
+                            Senior Machine Learning Engineer, working on identity verification with AI.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal delay-2">
+                    <div class="timeline-card">
+                        <div class="timeline-date">June 2024</div>
+                        <p class="timeline-text">
+                            Our research on understanding data using Item Response Theory got accepted to the
+                            <a href="https://arxiv.org/abs/2409.04041" target="_blank" rel="noopener">ICML 2024 DMLR
+                                Workshop</a>!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal delay-3">
+                    <div class="timeline-card">
+                        <div class="timeline-date">March 2024</div>
+                        <p class="timeline-text">
+                            Started as a Research Intern at <a href="https://avataar.ai/" target="_blank"
+                                rel="noopener">Avataar</a>,
+                            exploring 3D vision and generative models.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal delay-4">
+                    <div class="timeline-card">
+                        <div class="timeline-date">December 2023</div>
+                        <p class="timeline-text">
+                            Contributed to the <a
+                                href="https://huggingface.co/learn/computer-vision-course/en/unit0/welcome/welcome"
+                                target="_blank" rel="noopener">HuggingFace Computer Vision Course</a> — an open-source
+                            educational initiative.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal delay-5">
+                    <div class="timeline-card">
+                        <div class="timeline-date">June 2023</div>
+                        <p class="timeline-text">
+                            Teaching Assistant for <a href="https://nptel.ac.in/courses/106106224" target="_blank"
+                                rel="noopener">Deep Learning for Computer Vision</a> on NPTEL, mentoring 5000+ students.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal delay-6">
+                    <div class="timeline-card">
+                        <div class="timeline-date">March 2023</div>
+                        <p class="timeline-text">
+                            Paper accepted at ICLR'23 workshops:
+                            <a href="https://pml4dc.github.io/iclr2023/pdf/PML4DC_ICLR2023_49.pdf" target="_blank"
+                                rel="noopener">PML4DC'23</a> and
+                            <a href="https://openreview.net/forum?id=e8Eletuo1hk" target="_blank"
+                                rel="noopener">Trustworthy ML'23</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interests Section - Bento Grid -->
+        <section class="section" id="interests">
+            <div class="section-header reveal">
+                <div class="section-number">02</div>
+                <h2 class="section-title">Interests & More</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card bento-large reveal delay-1">
+                    <div class="bento-icon">🎨</div>
+                    <h3 class="bento-title">Art & Creativity</h3>
+                    <p class="bento-desc">
+                        Beyond neural networks, I'm captivated by the world of art—especially anime!
+                        The way art evokes emotions, tells stories, and transcends boundaries inspires
+                        my approach to building intelligent systems. I love sketching and exploring
+                        digital art in my free time.
+                    </p>
+                    <a href="https://www.instagram.com/charchits7/" target="_blank" class="bento-link">
+                        View my artworks
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="bento-card reveal delay-2">
+                    <div class="bento-icon">📚</div>
+                    <h3 class="bento-title">Teaching</h3>
+                    <p class="bento-desc">
+                        I believe in giving back to the community. As a TA for NPTEL, I've helped
+                        5000+ students learn deep learning fundamentals.
+                    </p>
+                </div>
+
+                <div class="bento-card reveal delay-3">
+                    <div class="bento-icon">🔬</div>
+                    <h3 class="bento-title">Research</h3>
+                    <p class="bento-desc">
+                        Published at top venues like ICLR & ICML workshops. Currently exploring
+                        generative models and 3D vision.
+                    </p>
+                    <a href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&hl=en" target="_blank"
+                        class="bento-link">
+                        Google Scholar
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="bento-card reveal delay-4">
+                    <div class="bento-icon">🌐</div>
+                    <h3 class="bento-title">Open Source</h3>
+                    <p class="bento-desc">
+                        Active contributor to open-source ML education. Helped build the HuggingFace
+                        Computer Vision course used by thousands worldwide.
+                    </p>
+                </div>
+
+                <div class="bento-card bento-large reveal delay-5">
+                    <div class="bento-icon">💡</div>
+                    <h3 class="bento-title">Philosophy</h3>
+                    <p class="bento-desc">
+                        I believe in building AI systems that are not just powerful, but also
+                        trustworthy and beneficial. My research spans data understanding,
+                        model interpretability, and responsible AI development. The intersection
+                        of art and science fascinates me—both seek to understand and represent
+                        the world in novel ways.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">charchit.dev</div>
+                    <div class="footer-tagline">Building the future, one model at a time.</div>
+                </div>
+
+                <div class="footer-links">
+                    <a href="mailto:charchit.research@gmail.com" class="footer-link">Email</a>
+                    <a href="https://github.com/charchit7" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://twitter.com/charchits7" target="_blank" class="footer-link">Twitter</a>
+                    <a href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&hl=en" target="_blank"
+                        class="footer-link">Scholar</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2024 Charchit Sharma · Crafted with curiosity & code
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ============================================
+        // CUSTOM CURSOR
+        // ============================================
+        const cursor = document.getElementById('cursor');
+        const cursorDot = document.getElementById('cursorDot');
+
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let dotX = 0, dotY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            // Smooth cursor follow
+            cursorX += (mouseX - cursorX) * 0.15;
+            cursorY += (mouseY - cursorY) * 0.15;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+
+            // Faster dot
+            dotX += (mouseX - dotX) * 0.35;
+            dotY += (mouseY - dotY) * 0.35;
+            cursorDot.style.left = dotX + 'px';
+            cursorDot.style.top = dotY + 'px';
+
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Hover effects
+        const hoverElements = document.querySelectorAll('a, button, .bento-card, .timeline-card');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // ============================================
+        // TYPEWRITER EFFECT
+        // ============================================
+        const nameElement = document.getElementById('typedName');
+        const nameText = 'Charchit Sharma';
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (charIndex < nameText.length) {
+                nameElement.textContent += nameText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        // Start typewriter after page load
+        window.addEventListener('load', () => {
+            setTimeout(typeWriter, 1200);
+        });
+
+        // ============================================
+        // PARTICLE SYSTEM
+        // ============================================
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        const particleCount = 80;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Mouse interaction
+                const dx = mouseX - this.x;
+                const dy = mouseY - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 100) {
+                    const force = (100 - distance) / 100;
+                    this.x -= dx * force * 0.02;
+                    this.y -= dy * force * 0.02;
+                }
+
+                // Wrap around
+                if (this.x < 0) this.x = canvas.width;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.y < 0) this.y = canvas.height;
+                if (this.y > canvas.height) this.y = 0;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(167, 139, 250, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        // Create particles
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        // Draw connections
+        function drawConnections() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 120) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(167, 139, 250, ${0.15 * (1 - distance / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+
+            drawConnections();
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // ============================================
+        // SCROLL REVEAL
+        // ============================================
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ============================================
+        // SMOOTH SCROLLING
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ============================================
+        // NAV ACTIVE STATE
+        // ============================================
+        const sections = document.querySelectorAll('section[id]');
+        const navPills = document.querySelectorAll('.nav-pill');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 150;
+                if (scrollY >= top) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navPills.forEach(pill => {
+                pill.classList.remove('active');
+                if (pill.getAttribute('href') === `#${current}`) {
+                    pill.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
