@@ -2,347 +2,252 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charchit Sharma | ML Engineer & Researcher</title>
-    <meta name="description"
-        content="Charchit Sharma - Senior Machine Learning Engineer specializing in generative learning and large-scale data understanding.">
-    <meta name="keywords" content="Machine Learning, Deep Learning, AI Research, Computer Vision, Generative AI">
-    <meta name="author" content="Charchit Sharma">
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://raw.githubusercontent.com/charchit7/profile/main/star.png" type="image/png">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Charchit Sharma</title>
+  <meta name="description"
+    content="Charchit Sharma is an applied scientist at Glance (InMobi Group) working on image generation, virtual try-on, and evaluation of generative models.">
+  <meta property="og:title" content="Charchit Sharma">
+  <meta property="og:description" content="Applied scientist working on image generation, virtual try-on, and evaluating generative models.">
+  <meta property="og:image" content="./assets/portrait-illustration.jpg">
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <!-- Animated Mesh Background -->
-    <div class="mesh-bg">
-        <div class="mesh-gradient mesh-1"></div>
-        <div class="mesh-gradient mesh-2"></div>
-        <div class="mesh-gradient mesh-3"></div>
-    </div>
-    <div class="grid-overlay"></div>
+  <main id="main">
+    <!-- 1. The call -->
+    <section class="call" id="top" aria-label="Introduction">
+      <h1 class="hello" aria-label="Charchit!">
+        <span aria-hidden="true">C</span><span aria-hidden="true">h</span><span aria-hidden="true">a</span><span
+          aria-hidden="true">r</span><span aria-hidden="true">c</span><span aria-hidden="true">h</span><span
+          aria-hidden="true">i</span><span aria-hidden="true">t</span><span aria-hidden="true">!</span>
+      </h1>
+      <p class="call-sub">Applied scientist at Glance in Bengaluru. I teach models to make images.</p>
 
-    <!-- Content Wrapper -->
-    <div class="content-wrapper">
+      <div class="tiles">
+        <figure class="tile tile--me" id="portrait">
+          <img src="./assets/portrait-photo.jpg" width="720" height="900" alt="Charchit Sharma in a beanie and puffer jacket, mountains behind him">
+          <canvas id="portraitCanvas" width="360" height="450" role="img"
+            aria-label="Charchit Sharma in a beanie and puffer jacket, mountains behind him"></canvas>
+          <figcaption class="chip">Charchit</figcaption>
+          <span class="chip chip--step" id="stepReadout" aria-hidden="true">t = 0</span>
+        </figure>
+        <figure class="tile tile--sky">
+          <img src="./assets/tile-sky.jpg" width="338" height="253" alt="My drawing of a boy looking up into a sky full of stars">
+          <figcaption class="chip">Drawing 1</figcaption>
+        </figure>
+        <figure class="tile tile--gold">
+          <img src="./assets/tile-gold.jpg" width="338" height="253" alt="My drawing of an elephant figure glowing in the dark, ringed by golden light">
+          <figcaption class="chip">Drawing 2</figcaption>
+        </figure>
+        <figure class="tile tile--red">
+          <img src="./assets/tile-red.jpg" width="338" height="253" alt="My drawing of a red-haired character with a golden eye">
+          <figcaption class="chip">Drawing 3</figcaption>
+        </figure>
+      </div>
+      <p class="call-hint">The buttons below work. Try the camera.</p>
+    </section>
 
-        <!-- Navigation -->
-        <nav class="nav">
-            <div class="nav-inner">
-                <a href="#" class="nav-logo">charchit.dev</a>
+    <!-- 2. Right now -->
+    <section class="now" id="now" aria-labelledby="now-heading">
+      <div class="stamp" aria-hidden="true"><span class="stamp-big" id="stampTime">--:--</span><span class="stamp-small">in Bengaluru</span></div>
+      <div class="now-body">
+        <h2 id="now-heading" class="big">right now</h2>
+        <p class="lede">I'm an applied scientist at <a href="https://glance.com/">Glance</a> (InMobi Group), working on
+          image generation. Before this I was at <a href="https://idfy.com/">IDfy</a>,
+          <a href="https://avataar.ai/">Avataar</a>, and <a href="https://www.iith.ac.in/">IIT Hyderabad</a> with
+          <a href="https://people.iith.ac.in/vineethnb/">Prof. Vineeth N Balasubramanian</a>.</p>
+      </div>
+      <ul class="notes">
+        <li class="note note--a">
+          <h3>Try-on that keeps you, you</h3>
+          <p>Turning catalog-style photos into natural, personal ones without losing the person in them.</p>
+        </li>
+        <li class="note note--b">
+          <h3>Did the model get better?</h3>
+          <p>Using item response theory to measure generative models and their data more carefully.</p>
+        </li>
+        <li class="note note--c">
+          <h3>Post-training</h3>
+          <p>RL post-training for image models, reward models, and few-step distillation.</p>
+        </li>
+      </ul>
+    </section>
 
-                <div class="nav-links" id="navLinks">
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#updates" class="nav-link">Updates</a>
-                    <a href="#interests" class="nav-link">Interests</a>
-                    <a href="None"
-                        target="_blank" class="nav-link">Resume</a>
-                    <a href="mailto:charchit.research@gmail.com" class="nav-cta">Let's Talk</a>
-                </div>
+    <!-- 3. Desktop -->
+    <section class="desk" id="work" aria-labelledby="desk-heading">
+      <h2 id="desk-heading" class="big">my desktop</h2>
+      <p class="desk-sub">Papers, teaching, and open source. Pick a file to see what it is.</p>
 
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </nav>
+      <div class="screen">
+        <div class="menubar">
+          <span class="menubar-me">Charchit</span>
+          <span>Papers</span>
+          <span>Teaching</span>
+          <span class="menubar-hide">Open source</span>
+          <span class="menubar-clock"><span class="menubar-hide">Bengaluru </span><time id="clock">--:--</time></span>
+        </div>
 
-        <!-- Hero Section -->
-        <section class="hero" id="about">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="status-badge fade-in stagger-1">
-                        <span class="status-dot"></span>
-                        <span>Open to Collaborations!</span>
-                    </div>
+        <div class="desktop">
+          <ul class="files" id="files" aria-label="Files">
+            <!-- TODO: point this at the ECCV paper and set its real title -->
+            <li><button type="button" class="file" aria-pressed="true" data-kind="pdf" data-title="Identity-preserving image generation"
+                data-meta="Paper, ECCV 2026"
+                data-desc="Turning catalog-style photos into natural, personal ones without losing the person in them."
+                data-href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&amp;hl=en">
+                <span class="file-icon file-icon--pdf" aria-hidden="true"></span>
+                <span class="file-name">eccv26.pdf</span></button></li>
+            <li><button type="button" class="file" aria-pressed="false" data-kind="pdf" data-title="Understanding data with item response theory"
+                data-meta="Workshop paper, ICML 2024 DMLR"
+                data-desc="Using item response theory from psychometrics to understand datasets and how models see them."
+                data-href="https://arxiv.org/abs/2409.04041">
+                <span class="file-icon file-icon--pdf" aria-hidden="true"></span>
+                <span class="file-name">icml24_irt.pdf</span></button></li>
+            <li><button type="button" class="file" aria-pressed="false" data-kind="pdf" data-title="PML4DC workshop paper"
+                data-meta="Workshop paper, ICLR 2023"
+                data-desc="Paper at the Practical ML for Developing Countries workshop."
+                data-href="https://pml4dc.github.io/iclr2023/pdf/PML4DC_ICLR2023_49.pdf">
+                <span class="file-icon file-icon--pdf" aria-hidden="true"></span>
+                <span class="file-name">pml4dc23.pdf</span></button></li>
+            <li><button type="button" class="file" aria-pressed="false" data-kind="pdf" data-title="Trustworthy ML workshop paper"
+                data-meta="Workshop paper, ICLR 2023"
+                data-desc="Paper at the Trustworthy ML workshop."
+                data-href="https://openreview.net/forum?id=e8Eletuo1hk">
+                <span class="file-icon file-icon--pdf" aria-hidden="true"></span>
+                <span class="file-name">trustworthy23.pdf</span></button></li>
+            <li><button type="button" class="file" aria-pressed="false" data-kind="folder" data-title="Hugging Face Computer Vision Course"
+                data-meta="Open source, 2023"
+                data-desc="Contributor to an open-source course on modern computer vision."
+                data-href="https://huggingface.co/learn/computer-vision-course/en/unit0/welcome/welcome">
+                <span class="file-icon file-icon--folder" aria-hidden="true"></span>
+                <span class="file-name">hf_cv_course</span></button></li>
+            <li><button type="button" class="file" aria-pressed="false" data-kind="folder" data-title="Deep Learning for Computer Vision"
+                data-meta="Teaching, NPTEL, 2023"
+                data-desc="Teaching assistant for 5,000+ students."
+                data-href="https://nptel.ac.in/courses/106106224">
+                <span class="file-icon file-icon--folder" aria-hidden="true"></span>
+                <span class="file-name">nptel_dl4cv</span></button></li>
+          </ul>
 
-                    <h1 class="hero-title fade-in stagger-2">
-                        <span class="hero-title-line">Hey, I'm</span>
-                        <span class="hero-title-line gradient-text">Charchit Sharma</span>
-                    </h1>
+          <aside class="info" aria-live="polite" aria-label="File info">
+            <p class="info-meta" id="infoMeta">Paper, ECCV 2026</p>
+            <h3 class="info-title" id="infoTitle">Identity-preserving image generation</h3>
+            <p class="info-desc" id="infoDesc">Turning catalog-style photos into natural, personal ones without losing
+              the person in them.</p>
+            <a class="pill pill--ink" id="infoOpen" href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&amp;hl=en">Open</a>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-                    <p class="hero-subtitle fade-in stagger-3">
-                        Senior Machine Learning Engineer at <a href="https://idfy.com/" target="_blank"
-                            rel="noopener">IDfy</a>,
-                        passionate about generative learning and understanding large-scale data.
-                        <br><br>
-                        Previously a Researcher at <a href="https://avataar.ai/" target="_blank"
-                            rel="noopener">Avataar.ai</a>
-                        and Research Assistant at <a href="https://www.iith.ac.in/" target="_blank" rel="noopener">IIT
-                            Hyderabad</a>
-                        under <a href="https://people.iith.ac.in/vineethnb/" target="_blank" rel="noopener">Prof.
-                            Vineeth N Balasubramanian</a>.
-                    </p>
+    <!-- 4. Calendar -->
+    <section class="cal" id="timeline" aria-labelledby="cal-heading">
+      <h2 id="cal-heading" class="big">the calendar</h2>
+      <p class="cal-sub">A few years, one block at a time.</p>
 
-                    <div class="hero-buttons fade-in stagger-4">
-                        <a href="None"
-                            target="_blank" class="btn btn-primary">
-                            View Resume
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&hl=en" target="_blank"
-                            class="btn btn-secondary">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                            Google Scholar
-                        </a>
-                    </div>
+      <div class="cal-scroll" tabindex="0" aria-label="Timeline, scrolls sideways on small screens">
+        <div class="cal-grid">
+          <section class="cal-col" aria-label="2022">
+            <h3 class="cal-year">2022</h3>
+            <p class="event event--job"><span class="event-when">Jan</span>Research assistant, IIT Hyderabad</p>
+          </section>
+          <section class="cal-col" aria-label="2023">
+            <h3 class="cal-year">2023</h3>
+            <p class="event event--paper"><span class="event-when">Mar</span>Two ICLR workshop papers</p>
+            <p class="event event--teach"><span class="event-when">Jun</span>TA, NPTEL Deep Learning for CV</p>
+            <p class="event event--teach"><span class="event-when">Dec</span>Hugging Face CV Course</p>
+          </section>
+          <section class="cal-col" aria-label="2024">
+            <h3 class="cal-year">2024</h3>
+            <p class="event event--job"><span class="event-when">Mar</span>Researcher, Avataar</p>
+            <p class="event event--paper"><span class="event-when">Jun</span>ICML DMLR workshop paper</p>
+            <p class="event event--job"><span class="event-when">Dec</span>Senior ML engineer, IDfy</p>
+          </section>
+          <section class="cal-col" aria-label="2026">
+            <h3 class="cal-year">2026</h3>
+            <!-- TODO: add the months for these two -->
+            <p class="event event--job"><span class="event-when">2026</span>Applied Scientist III, Glance</p>
+            <p class="event event--paper"><span class="event-when">2026</span>ECCV paper accepted</p>
+            <p class="event event--talk"><span class="event-when">Sep</span>Presenting at ECCV, Malmö</p>
+          </section>
+        </div>
+      </div>
 
-                    <div class="social-links fade-in stagger-5">
-                        <a href="https://twitter.com/charchits7" target="_blank" class="social-icon"
-                            aria-label="Twitter">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                        <a href="https://github.com/charchit7" target="_blank" class="social-icon" aria-label="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/charchitsharma7/" target="_blank" class="social-icon"
-                            aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.instagram.com/charchits7/" target="_blank" class="social-icon"
-                            aria-label="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
+      <ul class="legend" aria-label="Legend">
+        <li><span class="swatch event--job"></span>Work</li>
+        <li><span class="swatch event--paper"></span>Papers</li>
+        <li><span class="swatch event--teach"></span>Teaching and open source</li>
+        <li><span class="swatch event--talk"></span>Talks</li>
+      </ul>
+    </section>
 
-                <div class="hero-visual">
-                    <div class="image-wrapper">
-                        <div class="profile-image-container">
-                            <img src="./cs_pic.png" alt="Charchit Sharma" class="profile-image">
-                        </div>
+    <!-- 5. See you -->
+    <section class="bye" id="contact" aria-labelledby="bye-heading">
+      <h2 id="bye-heading" class="hello hello--bye" aria-label="see you!">
+        <span aria-hidden="true">s</span><span aria-hidden="true">e</span><span aria-hidden="true">e</span>
+        <span aria-hidden="true">y</span><span aria-hidden="true">o</span><span aria-hidden="true">u</span><span
+          aria-hidden="true">!</span>
+      </h2>
+      <p class="bye-text">Want to talk image generation, evaluation, or drawing? Send me a note.</p>
+      <a class="pill pill--mint" href="mailto:charchit.research@gmail.com">Email me</a>
+      <ul class="bye-links">
+        <li><a href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&amp;hl=en">Google Scholar</a></li>
+        <li><a href="https://github.com/charchit7">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/charchitsharma7/">LinkedIn</a></li>
+        <li><a href="https://twitter.com/charchits7">X</a></li>
+        <li><a href="https://www.instagram.com/charchits7/">Instagram</a></li>
+        <!-- TODO: add resume.pdf to the repo root (or replace with a Drive link) -->
+        <li><a href="./resume.pdf">Resume</a></li>
+      </ul>
+      <p class="bye-small">© 2026 Charchit Sharma</p>
+    </section>
+  </main>
 
-                        <!-- Floating Badges -->
-                        <div class="floating-badge floating-badge-1">
-                            <span class="badge-icon">🎓</span>
-                            <div>
-                                <span class="badge-text">CV/NLP</span>
-                                <span class="badge-sub">Researcher</span>
-                            </div>
-                        </div>
+  <!-- Live captions -->
+  <div class="captions" id="captions" hidden aria-live="polite">
+    <span class="captions-who">Charchit</span>
+    <p class="captions-line" id="captionsLine"></p>
+  </div>
 
-                        <div class="floating-badge floating-badge-2">
-                            <span class="badge-icon">🤖</span>
-                            <div>
-                                <span class="badge-text">ML Engineer</span>
-                                <span class="badge-sub">Generative AI</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Reactions float up from here -->
+  <div class="reactions" id="reactions" aria-hidden="true"></div>
 
-        <!-- Updates Section -->
-        <section class="section" id="updates">
-            <div class="section-header fade-in">
-                <span class="section-tag">Timeline</span>
-                <h2 class="section-title">Recent Updates</h2>
-            </div>
+  <!-- Call controls: the site's navigation -->
+  <nav class="dock" aria-label="Call controls and sections">
+    <button type="button" class="dock-btn" id="camBtn" aria-pressed="false" data-tip="Switch to illustration">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="13" height="11" rx="2.5"/><path d="M15.5 10.5 21 7.5v9l-5.5-3z"/></svg>
+      <span class="sr">Switch portrait to illustration</span>
+    </button>
+    <button type="button" class="dock-btn" id="ccBtn" aria-pressed="false" data-tip="Captions">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3"/><path d="M10.4 10.3a2.4 2.4 0 1 0 0 3.4M17.4 10.3a2.4 2.4 0 1 0 0 3.4"/></svg>
+      <span class="sr">Turn on captions</span>
+    </button>
+    <button type="button" class="dock-btn" id="reactBtn" data-tip="React">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.3 14.2a4.6 4.6 0 0 0 7.4 0"/><path d="M9 9.6v.8M15 9.6v.8"/></svg>
+      <span class="sr">Send a reaction</span>
+    </button>
+    <a class="dock-btn" href="#work" data-tip="My desktop">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v7.5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <span class="sr">Work</span>
+    </a>
+    <a class="dock-btn" href="#timeline" data-tip="Calendar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+      <span class="sr">Timeline</span>
+    </a>
+    <a class="dock-btn dock-btn--leave" href="#contact" data-tip="Leave call">
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M2.6 13.2c5.2-4.6 13.6-4.6 18.8 0 .4.4.5 1 .1 1.5l-1.6 1.9c-.4.4-1 .5-1.5.2l-2.7-1.5c-.4-.2-.6-.7-.5-1.1l.3-1.6c-2.2-.7-4.6-.7-6.8 0l.3 1.6c.1.4-.1.9-.5 1.1l-2.7 1.5c-.5.3-1.1.2-1.5-.2l-1.6-1.9c-.4-.5-.3-1.1.1-1.5z"/></svg>
+      <span class="sr">Say goodbye</span>
+    </a>
+  </nav>
 
-            <div class="news-grid">
-                <article class="news-card fade-in">
-                    <span class="news-date">Dec 2024</span>
-                    <p class="news-text">
-                        Joined <a href="https://idfy.com/" target="_blank" rel="noopener">IDfy</a> as a Senior Machine
-                        Learning Engineer, working on RAG for legal domain extraction and deepfake detection.
-                    </p>
-                </article>
-
-                <article class="news-card fade-in">
-                    <span class="news-date">Jun 2024</span>
-                    <p class="news-text">
-                        Our research on understanding data using Item Response Theory got accepted to the <a
-                            href="https://arxiv.org/abs/2409.04041" target="_blank" rel="noopener">ICML 2024 DMLR
-                            Workshop</a>!
-                    </p>
-                </article>
-
-                <article class="news-card fade-in">
-                    <span class="news-date">Mar 2024</span>
-                    <p class="news-text">
-                        Started as a Researcher at <a href="https://avataar.ai/" target="_blank"
-                            rel="noopener">Avataar</a>, exploring 3D vision and generative models.
-                    </p>
-                </article>
-
-                <article class="news-card fade-in">
-                    <span class="news-date">Dec 2023</span>
-                    <p class="news-text">
-                        Contributed to the <a
-                            href="https://huggingface.co/learn/computer-vision-course/en/unit0/welcome/welcome"
-                            target="_blank" rel="noopener">HuggingFace Computer Vision Course</a> — an open-source
-                        educational resource.
-                    </p>
-                </article>
-
-                <article class="news-card fade-in">
-                    <span class="news-date">Jun 2023</span>
-                    <p class="news-text">
-                        Became a Teaching Assistant for <a href="https://nptel.ac.in/courses/106106224" target="_blank"
-                            rel="noopener">Deep Learning for Computer Vision</a> on NPTEL, mentoring 5000+ students.
-                    </p>
-                </article>
-
-                <article class="news-card fade-in">
-                    <span class="news-date">Mar 2023</span>
-                    <p class="news-text">
-                        Paper accepted at ICLR'23 workshops: <a
-                            href="https://pml4dc.github.io/iclr2023/pdf/PML4DC_ICLR2023_49.pdf" target="_blank"
-                            rel="noopener">PML4DC'23</a> and <a href="https://openreview.net/forum?id=e8Eletuo1hk"
-                            target="_blank" rel="noopener">Trustworthy ML'23</a>.
-                    </p>
-                </article>
-
-                <article class="news-card fade-in">
-                    <span class="news-date">Jan 2022</span>
-                    <p class="news-text">
-                        Joined <a href="https://www.iith.ac.in/" target="_blank" rel="noopener">IIT Hyderabad</a> as a
-                        Research Assistant under <a href="https://people.iith.ac.in/vineethnb/" target="_blank"
-                            rel="noopener">Prof. Vineeth N Balasubramanian</a>.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Interests Section -->
-        <section class="section" id="interests">
-            <div class="section-header fade-in">
-                <span class="section-tag">Beyond Code</span>
-                <h2 class="section-title">Interests & Artworks</h2>
-            </div>
-
-            <div class="interests-grid">
-                <div class="interests-text-content fade-in">
-                    <p>
-                        Beyond the world of neural networks and datasets, I have a profound appreciation for
-                        artworks! The way art evokes emotions, tells stories, and transcends
-                        boundaries completely captivates me.
-                    </p>
-                    <p>
-                        I enjoy unraveling the layers of meaning, connecting with the artist's vision, and
-                        being moved by the colors, textures, and concepts. Art offers me solace, inspiration,
-                        and a deeper understanding of cultural heritage and artistic evolution.
-                    </p>
-                    <p>
-                        It's a gateway to a world of creativity that continually enriches my perspective—both
-                        in life and in my approach to building intelligent systems.
-                    </p>
-                </div>
-
-                <div class="art-card fade-in">
-                    <div class="art-card-content">
-                        <div class="art-icon">
-                            <i class="fa-solid fa-palette"></i>
-                        </div>
-                        <h3 class="art-title">My Artworks</h3>
-                        <p class="art-desc">
-                            Explore my creative journey through sketches, digital art, and anime-inspired pieces.
-                        </p>
-                        <a href="https://www.instagram.com/charchits7/" target="_blank" class="art-link">
-                            <i class="fa-brands fa-instagram"></i>
-                            @charchits7
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <p class="footer-text">
-                    © 2024 Charchit Sharma — Built with <span>♥</span> and curiosity
-                </p>
-                <div class="footer-links">
-                    <a href="mailto:charchit.research@gmail.com" class="footer-link">Email</a>
-                    <a href="https://github.com/charchit7" target="_blank" class="footer-link">GitHub</a>
-                    <a href="https://twitter.com/charchits7" target="_blank" class="footer-link">Twitter</a>
-                    <a href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&hl=en" target="_blank"
-                        class="footer-link">Scholar</a>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        // Mobile Navigation
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = navToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-xmark');
-        });
-
-        // Close menu on link click
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                navToggle.querySelector('i').classList.add('fa-bars');
-                navToggle.querySelector('i').classList.remove('fa-xmark');
-            });
-        });
-
-        // Scroll-triggered fade-in animations
-        const fadeElements = document.querySelectorAll('.fade-in');
-
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    fadeObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -80px 0px'
-        });
-
-        fadeElements.forEach(el => fadeObserver.observe(el));
-
-        // Smooth anchor scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Parallax effect on mesh gradients
-        document.addEventListener('mousemove', (e) => {
-            const meshGradients = document.querySelectorAll('.mesh-gradient');
-            const x = (e.clientX / window.innerWidth - 0.5) * 20;
-            const y = (e.clientY / window.innerHeight - 0.5) * 20;
-
-            meshGradients.forEach((gradient, index) => {
-                const factor = (index + 1) * 0.5;
-                gradient.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
-            });
-        });
-
-        // Add visible class to hero elements on load
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.hero .fade-in').forEach(el => {
-                el.classList.add('visible');
-            });
-        });
-    </script>
-
+  <script src="./assets/portraits.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>
