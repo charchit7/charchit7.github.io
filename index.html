@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@400..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css?v=20260930">
 </head>
 
 <body>
@@ -74,8 +74,8 @@
           <p>Using item response theory to measure generative models and their data more carefully.</p>
         </li>
         <li class="note note--c">
-          <h3>Post-training</h3>
-          <p>RL post-training for image models, reward models, and few-step distillation.</p>
+          <h3>Where did that image come from?</h3>
+          <p>Data attribution for generative models: tracing a generated image back to the training data that shaped it.</p>
         </li>
       </ul>
     </section>
@@ -96,13 +96,13 @@
 
         <div class="desktop">
           <ul class="files" id="files" aria-label="Files">
-            <!-- TODO: point this at the ECCV paper and set its real title -->
-            <li><button type="button" class="file" aria-pressed="true" data-kind="pdf" data-title="Identity-preserving image generation"
-                data-meta="Paper, ECCV 2026"
-                data-desc="Turning catalog-style photos into natural, personal ones without losing the person in them."
+            <!-- TODO: replace data-href (and the Open link below) with the paper or your Medium post -->
+            <li><button type="button" class="file" aria-pressed="true" data-kind="pdf" data-title="Influence functions for flow-matching models"
+                data-meta="Workshop paper, eXCV at ECCV 2026"
+                data-desc="Porting K-FAC influence functions to flow-matching generative models, with a scale study against TRAK and D-TRAK."
                 data-href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&amp;hl=en">
                 <span class="file-icon file-icon--pdf" aria-hidden="true"></span>
-                <span class="file-name">eccv26.pdf</span></button></li>
+                <span class="file-name">excv26_kfac.pdf</span></button></li>
             <li><button type="button" class="file" aria-pressed="false" data-kind="pdf" data-title="Understanding data with item response theory"
                 data-meta="Workshop paper, ICML 2024 DMLR"
                 data-desc="Using item response theory from psychometrics to understand datasets and how models see them."
@@ -136,10 +136,10 @@
           </ul>
 
           <aside class="info" aria-live="polite" aria-label="File info">
-            <p class="info-meta" id="infoMeta">Paper, ECCV 2026</p>
-            <h3 class="info-title" id="infoTitle">Identity-preserving image generation</h3>
-            <p class="info-desc" id="infoDesc">Turning catalog-style photos into natural, personal ones without losing
-              the person in them.</p>
+            <p class="info-meta" id="infoMeta">Workshop paper, eXCV at ECCV 2026</p>
+            <h3 class="info-title" id="infoTitle">Influence functions for flow-matching models</h3>
+            <p class="info-desc" id="infoDesc">Porting K-FAC influence functions to flow-matching generative models, with
+              a scale study against TRAK and D-TRAK.</p>
             <a class="pill pill--ink" id="infoOpen" href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&amp;hl=en">Open</a>
           </aside>
         </div>
@@ -171,9 +171,9 @@
           </section>
           <section class="cal-col" aria-label="2026">
             <h3 class="cal-year">2026</h3>
-            <!-- TODO: add the months for these two -->
+            <!-- TODO: add the month you joined Glance -->
             <p class="event event--job"><span class="event-when">2026</span>Applied Scientist III, Glance</p>
-            <p class="event event--paper"><span class="event-when">2026</span>ECCV paper accepted</p>
+            <p class="event event--paper"><span class="event-when">2026</span>eXCV workshop paper at ECCV</p>
             <p class="event event--talk"><span class="event-when">Sep</span>Presenting at ECCV, Malmö</p>
           </section>
         </div>
@@ -246,8 +246,8 @@
     </a>
   </nav>
 
-  <script src="./assets/portraits.js"></script>
-  <script src="./script.js"></script>
+  <script src="./assets/portraits.js?v=20260930"></script>
+  <script src="./script.js?v=20260930"></script>
 </body>
 
 </html>
