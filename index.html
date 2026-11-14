@@ -9,245 +9,322 @@
     content="Charchit Sharma is an applied scientist at Glance (InMobi Group) working on image generation, virtual try-on, and evaluation of generative models.">
   <meta property="og:title" content="Charchit Sharma">
   <meta property="og:description" content="Applied scientist working on image generation, virtual try-on, and evaluating generative models.">
-  <meta property="og:image" content="./assets/portrait-illustration.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://charchit7.github.io/">
+  <meta property="og:image" content="https://charchit7.github.io/assets/portrait-illustration.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#faf8f5">
   <link rel="icon" type="image/png" href="./assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@400..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=20260930">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css?v=20261114d">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
+  <header class="site-header" id="siteHeader">
+    <div class="wrap site-header-inner">
+      <a class="wordmark" href="#top">Charchit Sharma</a>
+      <div class="site-header-right">
+        <nav class="site-nav" aria-label="Sections">
+          <a href="#paper">Paper</a>
+          <a href="#research" class="nav-wide">Research</a>
+          <a href="#drawings" class="nav-wide">Drawings</a>
+          <a href="#work">Work</a>
+          <a href="#timeline" class="nav-wide">Timeline</a>
+        </nav>
+        <a class="btn btn--small" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
   <main id="main">
-    <!-- 1. The call -->
-    <section class="call" id="top" aria-label="Introduction">
-      <h1 class="hello" aria-label="Charchit!">
-        <span aria-hidden="true">C</span><span aria-hidden="true">h</span><span aria-hidden="true">a</span><span
-          aria-hidden="true">r</span><span aria-hidden="true">c</span><span aria-hidden="true">h</span><span
-          aria-hidden="true">i</span><span aria-hidden="true">t</span><span aria-hidden="true">!</span>
-      </h1>
-      <p class="call-sub">Applied scientist at Glance in Bengaluru. I teach models to make images.</p>
-
-      <div class="tiles">
-        <figure class="tile tile--me" id="portrait">
-          <img src="./assets/portrait-photo.jpg" width="720" height="900" alt="Charchit Sharma in a beanie and puffer jacket, mountains behind him">
-          <canvas id="portraitCanvas" width="360" height="450" role="img"
-            aria-label="Charchit Sharma in a beanie and puffer jacket, mountains behind him"></canvas>
-          <figcaption class="chip">Charchit</figcaption>
-          <span class="chip chip--step" id="stepReadout" aria-hidden="true">t = 0</span>
-        </figure>
-        <figure class="tile tile--sky">
-          <img src="./assets/tile-sky.jpg" width="338" height="253" alt="My drawing of a boy looking up into a sky full of stars">
-          <figcaption class="chip">Drawing 1</figcaption>
-        </figure>
-        <figure class="tile tile--gold">
-          <img src="./assets/tile-gold.jpg" width="338" height="253" alt="My drawing of an elephant figure glowing in the dark, ringed by golden light">
-          <figcaption class="chip">Drawing 2</figcaption>
-        </figure>
-        <figure class="tile tile--red">
-          <img src="./assets/tile-red.jpg" width="338" height="253" alt="My drawing of a red-haired character with a golden eye">
-          <figcaption class="chip">Drawing 3</figcaption>
-        </figure>
-      </div>
-      <p class="call-hint">The buttons below work. Try the camera.</p>
-    </section>
-
-    <!-- 2. Right now -->
-    <section class="now" id="now" aria-labelledby="now-heading">
-      <div class="stamp" aria-hidden="true"><span class="stamp-big" id="stampTime">--:--</span><span class="stamp-small">in Bengaluru</span></div>
-      <div class="now-body">
-        <h2 id="now-heading" class="big">right now</h2>
-        <p class="lede">I'm an applied scientist at <a href="https://glance.com/">Glance</a> (InMobi Group), working on
-          image generation. Before this I was at <a href="https://idfy.com/">IDfy</a>,
-          <a href="https://avataar.ai/">Avataar</a>, and <a href="https://www.iith.ac.in/">IIT Hyderabad</a> with
-          <a href="https://people.iith.ac.in/vineethnb/">Prof. Vineeth N Balasubramanian</a>.</p>
-      </div>
-      <ul class="notes">
-        <li class="note note--a">
-          <h3>Try-on that keeps you, you</h3>
-          <p>Turning catalog-style photos into natural, personal ones without losing the person in them.</p>
-        </li>
-        <li class="note note--b">
-          <h3>Did the model get better?</h3>
-          <p>Using item response theory to measure generative models and their data more carefully.</p>
-        </li>
-        <li class="note note--c">
-          <h3>Where did that image come from?</h3>
-          <p>Data attribution for generative models: tracing a generated image back to the training data that shaped it.</p>
-        </li>
-      </ul>
-    </section>
-
-    <!-- 3. Desktop -->
-    <section class="desk" id="work" aria-labelledby="desk-heading">
-      <h2 id="desk-heading" class="big">my desktop</h2>
-      <p class="desk-sub">Papers, teaching, and open source. Pick a file to see what it is.</p>
-
-      <div class="screen">
-        <div class="menubar">
-          <span class="menubar-me">Charchit</span>
-          <span>Papers</span>
-          <span>Teaching</span>
-          <span class="menubar-hide">Open source</span>
-          <span class="menubar-clock"><span class="menubar-hide">Bengaluru </span><time id="clock">--:--</time></span>
+    <!-- Introduction -->
+    <section class="hero wrap" id="top" aria-label="Introduction">
+      <div class="hero-text">
+        <p class="eyebrow rise" style="--d: 0">Applied Scientist · Glance, Bengaluru</p>
+        <h1 class="hero-name">
+          <span class="rise" style="--d: 1">Charchit</span>
+          <span class="rise" style="--d: 2">Sharma</span>
+        </h1>
+        <p class="hero-lede rise" style="--d: 3">I teach models to make images, measure
+          <em>whether they actually got better,</em> and draw my own.</p>
+        <div class="hero-actions rise" style="--d: 4">
+          <a class="btn" href="mailto:charchit.research@gmail.com">Email me</a>
+          <a class="btn btn--ghost" href="#paper">Latest paper <span class="btn-arrow" aria-hidden="true">↓</span></a>
         </div>
+        <ul class="hero-links rise" style="--d: 5">
+          <li><a class="link" href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&amp;hl=en">Google Scholar</a></li>
+          <li><a class="link" href="https://github.com/charchit7">GitHub</a></li>
+          <li><a class="link" href="https://www.linkedin.com/in/charchitsharma7/">LinkedIn</a></li>
+        </ul>
+      </div>
 
-        <div class="desktop">
-          <ul class="files" id="files" aria-label="Files">
-            <!-- TODO: replace data-href (and the Open link below) with the paper or your Medium post -->
-            <li><button type="button" class="file" aria-pressed="true" data-kind="pdf" data-title="Influence functions for flow-matching models"
-                data-meta="Workshop paper, eXCV at ECCV 2026"
-                data-desc="Porting K-FAC influence functions to flow-matching generative models, with a scale study against TRAK and D-TRAK."
-                data-href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&amp;hl=en">
-                <span class="file-icon file-icon--pdf" aria-hidden="true"></span>
-                <span class="file-name">excv26_kfac.pdf</span></button></li>
-            <li><button type="button" class="file" aria-pressed="false" data-kind="pdf" data-title="Understanding data with item response theory"
-                data-meta="Workshop paper, ICML 2024 DMLR"
-                data-desc="Using item response theory from psychometrics to understand datasets and how models see them."
-                data-href="https://arxiv.org/abs/2409.04041">
-                <span class="file-icon file-icon--pdf" aria-hidden="true"></span>
-                <span class="file-name">icml24_irt.pdf</span></button></li>
-            <li><button type="button" class="file" aria-pressed="false" data-kind="pdf" data-title="PML4DC workshop paper"
-                data-meta="Workshop paper, ICLR 2023"
-                data-desc="Paper at the Practical ML for Developing Countries workshop."
-                data-href="https://pml4dc.github.io/iclr2023/pdf/PML4DC_ICLR2023_49.pdf">
-                <span class="file-icon file-icon--pdf" aria-hidden="true"></span>
-                <span class="file-name">pml4dc23.pdf</span></button></li>
-            <li><button type="button" class="file" aria-pressed="false" data-kind="pdf" data-title="Trustworthy ML workshop paper"
-                data-meta="Workshop paper, ICLR 2023"
-                data-desc="Paper at the Trustworthy ML workshop."
-                data-href="https://openreview.net/forum?id=e8Eletuo1hk">
-                <span class="file-icon file-icon--pdf" aria-hidden="true"></span>
-                <span class="file-name">trustworthy23.pdf</span></button></li>
-            <li><button type="button" class="file" aria-pressed="false" data-kind="folder" data-title="Hugging Face Computer Vision Course"
-                data-meta="Open source, 2023"
-                data-desc="Contributor to an open-source course on modern computer vision."
-                data-href="https://huggingface.co/learn/computer-vision-course/en/unit0/welcome/welcome">
-                <span class="file-icon file-icon--folder" aria-hidden="true"></span>
-                <span class="file-name">hf_cv_course</span></button></li>
-            <li><button type="button" class="file" aria-pressed="false" data-kind="folder" data-title="Deep Learning for Computer Vision"
-                data-meta="Teaching, NPTEL, 2023"
-                data-desc="Teaching assistant for 5,000+ students."
-                data-href="https://nptel.ac.in/courses/106106224">
-                <span class="file-icon file-icon--folder" aria-hidden="true"></span>
-                <span class="file-name">nptel_dl4cv</span></button></li>
-          </ul>
-
-          <aside class="info" aria-live="polite" aria-label="File info">
-            <p class="info-meta" id="infoMeta">Workshop paper, eXCV at ECCV 2026</p>
-            <h3 class="info-title" id="infoTitle">Influence functions for flow-matching models</h3>
-            <p class="info-desc" id="infoDesc">Porting K-FAC influence functions to flow-matching generative models, with
-              a scale study against TRAK and D-TRAK.</p>
-            <a class="pill pill--ink" id="infoOpen" href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&amp;hl=en">Open</a>
-          </aside>
+      <div class="portrait rise" id="portrait" style="--d: 2">
+        <div class="portrait-frame">
+          <img class="portrait-img" data-which="photo" src="./assets/portrait-photo.jpg" width="720" height="900"
+            alt="Charchit Sharma in a beanie and puffer jacket, with mountains in the background">
+          <img class="portrait-img" data-which="illustration" src="./assets/portrait-illustration.jpg" width="720"
+            height="900" alt="" aria-hidden="true">
+          <canvas id="portraitCanvas" width="360" height="450" aria-hidden="true"></canvas>
+        </div>
+        <div class="portrait-bar">
+          <div class="portrait-toggle" role="group" aria-label="Portrait style">
+            <button type="button" data-portrait="photo" aria-pressed="true">Photograph</button>
+            <button type="button" data-portrait="illustration" aria-pressed="false">Illustration</button>
+          </div>
+          <span class="portrait-step" id="stepReadout" aria-hidden="true">t = 0</span>
         </div>
       </div>
     </section>
 
-    <!-- 4. Calendar -->
-    <section class="cal" id="timeline" aria-labelledby="cal-heading">
-      <h2 id="cal-heading" class="big">the calendar</h2>
-      <p class="cal-sub">A few years, one block at a time.</p>
-
-      <div class="cal-scroll" tabindex="0" aria-label="Timeline, scrolls sideways on small screens">
-        <div class="cal-grid">
-          <section class="cal-col" aria-label="2022">
-            <h3 class="cal-year">2022</h3>
-            <p class="event event--job"><span class="event-when">Jan</span>Research assistant, IIT Hyderabad</p>
-          </section>
-          <section class="cal-col" aria-label="2023">
-            <h3 class="cal-year">2023</h3>
-            <p class="event event--paper"><span class="event-when">Mar</span>Two ICLR workshop papers</p>
-            <p class="event event--teach"><span class="event-when">Jun</span>TA, NPTEL Deep Learning for CV</p>
-            <p class="event event--teach"><span class="event-when">Dec</span>Hugging Face CV Course</p>
-          </section>
-          <section class="cal-col" aria-label="2024">
-            <h3 class="cal-year">2024</h3>
-            <p class="event event--job"><span class="event-when">Mar</span>Researcher, Avataar</p>
-            <p class="event event--paper"><span class="event-when">Jun</span>ICML DMLR workshop paper</p>
-            <p class="event event--job"><span class="event-when">Dec</span>Senior ML engineer, IDfy</p>
-          </section>
-          <section class="cal-col" aria-label="2026">
-            <h3 class="cal-year">2026</h3>
-            <!-- TODO: add the month you joined Glance -->
-            <p class="event event--job"><span class="event-when">2026</span>Applied Scientist III, Glance</p>
-            <p class="event event--paper"><span class="event-when">2026</span>eXCV workshop paper at ECCV</p>
-            <p class="event event--talk"><span class="event-when">Sep</span>Presenting at ECCV, Malmö</p>
-          </section>
+    <!-- At a glance -->
+    <div class="wrap">
+      <dl class="facts">
+        <div data-reveal>
+          <dt>Now</dt>
+          <dd>Applied Scientist III at <a href="https://glance.com/">Glance</a> (InMobi Group), Bengaluru</dd>
         </div>
-      </div>
+        <div data-reveal>
+          <dt>Previously</dt>
+          <dd><a href="https://idfy.com/">IDfy</a>, <a href="https://avataar.ai/">Avataar</a>, and
+            <a href="https://www.iith.ac.in/">IIT Hyderabad</a> with
+            <a href="https://people.iith.ac.in/vineethnb/">Prof. Vineeth N Balasubramanian</a></dd>
+        </div>
+        <div data-reveal>
+          <dt>Published at</dt>
+          <dd>Workshops at ECCV 2026, ICML 2024, and ICLR 2023</dd>
+        </div>
+      </dl>
+    </div>
 
-      <ul class="legend" aria-label="Legend">
-        <li><span class="swatch event--job"></span>Work</li>
-        <li><span class="swatch event--paper"></span>Papers</li>
-        <li><span class="swatch event--teach"></span>Teaching and open source</li>
-        <li><span class="swatch event--talk"></span>Talks</li>
-      </ul>
+    <!-- Latest paper -->
+    <section class="section wrap" id="paper" aria-labelledby="paper-label">
+      <h2 class="label" id="paper-label" data-reveal>Latest paper</h2>
+      <div class="section-body">
+        <article class="feature" data-reveal>
+          <p class="feature-meta">eXCV Workshop at ECCV 2026 · Proceedings Track · Sole author</p>
+          <h3 class="feature-title">Influence Functions for Flow-Matching Generative Models
+            <em>A K-FAC Port and an Honest Scale Study</em></h3>
+          <p class="feature-desc">Porting K-FAC influence functions to flow-matching generative models, with a scale
+            study against TRAK and D-TRAK.</p>
+          <div class="feature-actions">
+            <a class="btn" href="https://openreview.net/forum?id=gZiD0aTQxO">Read the paper <span class="btn-arrow" aria-hidden="true">↗</span></a>
+            <a class="btn btn--ghost" href="https://openreview.net/attachment?id=gZiD0aTQxO&amp;name=poster">Poster <span class="btn-arrow" aria-hidden="true">↗</span></a>
+            <a class="btn btn--ghost" href="https://excv-workshop.github.io/publication/influence-functions-for-flow-matching-generative-models-a-k-fac-port-and-an-honest-scale-study/">Workshop page <span class="btn-arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <p class="feature-note">Questions, feedback, or want to build on it?
+            <a href="mailto:charchit.research@gmail.com?subject=Your%20eXCV%20paper%20on%20influence%20functions">Email me about this paper<span class="contact-arrow" aria-hidden="true">→</span></a></p>
+        </article>
+      </div>
     </section>
 
-    <!-- 5. See you -->
-    <section class="bye" id="contact" aria-labelledby="bye-heading">
-      <h2 id="bye-heading" class="hello hello--bye" aria-label="see you!">
-        <span aria-hidden="true">s</span><span aria-hidden="true">e</span><span aria-hidden="true">e</span>
-        <span aria-hidden="true">y</span><span aria-hidden="true">o</span><span aria-hidden="true">u</span><span
-          aria-hidden="true">!</span>
-      </h2>
-      <p class="bye-text">Want to talk image generation, evaluation, or drawing? Send me a note.</p>
-      <a class="pill pill--mint" href="mailto:charchit.research@gmail.com">Email me</a>
-      <ul class="bye-links">
-        <li><a href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&amp;hl=en">Google Scholar</a></li>
-        <li><a href="https://github.com/charchit7">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/charchitsharma7/">LinkedIn</a></li>
-        <li><a href="https://twitter.com/charchits7">X</a></li>
-        <li><a href="https://www.instagram.com/charchits7/">Instagram</a></li>
-        <!-- TODO: add resume.pdf to the repo root (or replace with a Drive link) -->
-        <li><a href="./resume.pdf">Resume</a></li>
-      </ul>
-      <p class="bye-small">© 2026 Charchit Sharma</p>
+    <!-- Current research -->
+    <section class="section wrap" id="research" aria-labelledby="research-label">
+      <h2 class="label" id="research-label" data-reveal>Research</h2>
+      <div class="section-body">
+        <p class="statement" data-reveal>I work on image generation, virtual try-on, and the evaluation of generative
+          models.</p>
+
+        <h3 class="sublabel" data-reveal>Currently thinking about</h3>
+        <ul class="topics">
+          <li data-reveal>
+            <h4>Try-on that keeps you, you</h4>
+            <p>Turning catalog-style photos into natural, personal ones without losing the person in them.</p>
+          </li>
+          <li data-reveal>
+            <h4>Did the model get better?</h4>
+            <p>Using item response theory to measure generative models and their data more carefully.</p>
+          </li>
+          <li data-reveal>
+            <h4>Where did that image come from?</h4>
+            <p>Data attribution for generative models: tracing a generated image back to the training data that
+              shaped it.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Drawings -->
+    <section class="section wrap" id="drawings" aria-labelledby="drawings-label">
+      <h2 class="label" id="drawings-label" data-reveal>Drawings</h2>
+      <div class="section-body">
+        <p class="statement statement--short" data-reveal>Away from the models, I draw. These three are mine.</p>
+        <ul class="plates">
+          <li data-reveal>
+            <figure class="plate">
+              <div class="plate-mat"><img src="./assets/tile-sky.jpg" width="338" height="253" loading="lazy"
+                  alt="My drawing of a boy looking up into a sky full of stars"></div>
+              <figcaption><span class="plate-num">i.</span> A boy looking up into a sky full of stars</figcaption>
+            </figure>
+          </li>
+          <li data-reveal>
+            <figure class="plate">
+              <div class="plate-mat"><img src="./assets/tile-gold.jpg" width="338" height="253" loading="lazy"
+                  alt="My drawing of an elephant figure glowing in the dark, ringed by golden light"></div>
+              <figcaption><span class="plate-num">ii.</span> An elephant figure glowing in the dark</figcaption>
+            </figure>
+          </li>
+          <li data-reveal>
+            <figure class="plate">
+              <div class="plate-mat"><img src="./assets/tile-red.jpg" width="338" height="253" loading="lazy"
+                  alt="My drawing of a red-haired character with a golden eye"></div>
+              <figcaption><span class="plate-num">iii.</span> A red-haired character with a golden eye</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Papers, teaching, open source -->
+    <section class="section wrap" id="work" aria-labelledby="work-label">
+      <h2 class="label" id="work-label" data-reveal>Selected work</h2>
+      <div class="section-body">
+        <h3 class="sublabel sublabel--first" data-reveal>Papers</h3>
+        <ul class="entries">
+          <li data-reveal><a class="entry" href="https://excv-workshop.github.io/publication/influence-functions-for-flow-matching-generative-models-a-k-fac-port-and-an-honest-scale-study/">
+              <span class="entry-year">2026</span>
+              <span class="entry-main">
+                <span class="entry-title">Influence Functions for Flow-Matching Generative Models: A K-FAC Port and an
+                  Honest Scale Study</span>
+                <span class="entry-authors"><b>Charchit Sharma</b></span>
+                <span class="entry-desc">Porting K-FAC influence functions to flow-matching generative models, with a
+                  scale study against TRAK and D-TRAK.</span>
+              </span>
+              <span class="entry-venue">eXCV Workshop, ECCV</span>
+              <span class="entry-arrow" aria-hidden="true">↗</span>
+            </a></li>
+          <li data-reveal><a class="entry" href="https://arxiv.org/abs/2409.04041">
+              <span class="entry-year">2024</span>
+              <span class="entry-main">
+                <span class="entry-title">On Evaluation of Vision Datasets and Models using Human Competency
+                  Frameworks</span>
+                <span class="entry-authors">Rahul Ramachandran, Tejal Kulkarni, <b>Charchit Sharma</b>, Deepak
+                  Vijaykeerthy, Vineeth N Balasubramanian</span>
+                <span class="entry-desc">Using item response theory from psychometrics to understand datasets and how
+                  models see them.</span>
+              </span>
+              <span class="entry-venue">DMLR Workshop, ICML</span>
+              <span class="entry-arrow" aria-hidden="true">↗</span>
+            </a></li>
+          <li data-reveal><a class="entry" href="https://pml4dc.github.io/iclr2023/pdf/PML4DC_ICLR2023_49.pdf">
+              <span class="entry-year">2023</span>
+              <span class="entry-main">
+                <span class="entry-title">Do Models See Corruption as We See? An Item Response Theory Based Study in
+                  Computer Vision</span>
+                <span class="entry-authors"><b>Charchit Sharma</b>, Ayan Kumar Pahari, Vineeth N Balasubramanian,
+                  Deepak Vijaykeerthy</span>
+                <span class="entry-desc">Paper at the Practical ML for Developing Countries workshop.</span>
+              </span>
+              <span class="entry-venue">PML4DC Workshop, ICLR</span>
+              <span class="entry-arrow" aria-hidden="true">↗</span>
+            </a></li>
+          <li data-reveal><a class="entry" href="https://openreview.net/forum?id=e8Eletuo1hk">
+              <span class="entry-year">2023</span>
+              <span class="entry-main">
+                <span class="entry-title">Trustworthy ML workshop paper</span>
+                <span class="entry-desc">Paper at the Trustworthy ML workshop.</span>
+              </span>
+              <span class="entry-venue">Trustworthy ML Workshop, ICLR</span>
+              <span class="entry-arrow" aria-hidden="true">↗</span>
+            </a></li>
+        </ul>
+
+        <h3 class="sublabel" data-reveal>Teaching and open source</h3>
+        <ul class="entries">
+          <li data-reveal><a class="entry" href="https://huggingface.co/learn/computer-vision-course/en/unit0/welcome/welcome">
+              <span class="entry-year">2023</span>
+              <span class="entry-main">
+                <span class="entry-title">Hugging Face Computer Vision Course</span>
+                <span class="entry-desc">Contributor to an open-source course on modern computer vision.</span>
+              </span>
+              <span class="entry-venue">Open source</span>
+              <span class="entry-arrow" aria-hidden="true">↗</span>
+            </a></li>
+          <li data-reveal><a class="entry" href="https://nptel.ac.in/courses/106106224">
+              <span class="entry-year">2023</span>
+              <span class="entry-main">
+                <span class="entry-title">Deep Learning for Computer Vision</span>
+                <span class="entry-desc">Teaching assistant for 5,000+ students.</span>
+              </span>
+              <span class="entry-venue">Teaching, NPTEL</span>
+              <span class="entry-arrow" aria-hidden="true">↗</span>
+            </a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section wrap" id="timeline" aria-labelledby="timeline-label">
+      <h2 class="label" id="timeline-label" data-reveal>Timeline</h2>
+      <div class="section-body">
+        <ol class="years">
+          <li class="year" data-reveal>
+            <h3 class="year-num">2026</h3>
+            <ul class="events">
+              <li><span class="event-when">Sep</span><span class="event-what">Presenting at ECCV, Malmö</span><span class="event-kind">Talk</span></li>
+              <li><span class="event-when"></span><span class="event-what">eXCV workshop paper at ECCV</span><span class="event-kind">Paper</span></li>
+              <li><span class="event-when">Jul</span><span class="event-what">Applied Scientist III, Glance</span><span class="event-kind">Work</span></li>
+            </ul>
+          </li>
+          <li class="year" data-reveal>
+            <h3 class="year-num">2024</h3>
+            <ul class="events">
+              <li><span class="event-when">Dec</span><span class="event-what">Senior ML engineer, IDfy</span><span class="event-kind">Work</span></li>
+              <li><span class="event-when">Jun</span><span class="event-what">ICML DMLR workshop paper</span><span class="event-kind">Paper</span></li>
+              <li><span class="event-when">Mar</span><span class="event-what">Researcher, Avataar</span><span class="event-kind">Work</span></li>
+            </ul>
+          </li>
+          <li class="year" data-reveal>
+            <h3 class="year-num">2023</h3>
+            <ul class="events">
+              <li><span class="event-when">Dec</span><span class="event-what">Hugging Face CV Course</span><span class="event-kind">Open source</span></li>
+              <li><span class="event-when">Jun</span><span class="event-what">TA, NPTEL Deep Learning for CV</span><span class="event-kind">Teaching</span></li>
+              <li><span class="event-when">Mar</span><span class="event-what">Two ICLR workshop papers</span><span class="event-kind">Paper</span></li>
+            </ul>
+          </li>
+          <li class="year" data-reveal>
+            <h3 class="year-num">2022</h3>
+            <ul class="events">
+              <li><span class="event-when">Jan</span><span class="event-what">Research assistant, IIT Hyderabad</span><span class="event-kind">Work</span></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--contact wrap" id="contact" aria-labelledby="contact-label">
+      <h2 class="label" id="contact-label" data-reveal>Contact</h2>
+      <div class="section-body">
+        <p class="statement statement--short" data-reveal>Want to talk image generation, evaluation, or drawing?
+          Send me a note.</p>
+        <p class="contact-mail" data-reveal>
+          <a href="mailto:charchit.research@gmail.com">charchit.research@gmail.com<span class="contact-arrow" aria-hidden="true">→</span></a>
+          <button type="button" class="copy" id="copyEmail" data-copy="charchit.research@gmail.com">Copy address</button>
+        </p>
+        <ul class="contact-links" data-reveal>
+          <li><a class="link" href="https://scholar.google.com/citations?user=_rywTh8AAAAJ&amp;hl=en">Google Scholar</a></li>
+          <li><a class="link" href="https://github.com/charchit7">GitHub</a></li>
+          <li><a class="link" href="https://www.linkedin.com/in/charchitsharma7/">LinkedIn</a></li>
+          <li><a class="link" href="https://twitter.com/charchits7">X</a></li>
+          <li><a class="link" href="https://www.instagram.com/charchits7/">Instagram</a></li>
+          <!-- TODO: add resume.pdf to the repo root (or replace with a Drive link) -->
+          <li><a class="link" href="./resume.pdf">Resume</a></li>
+        </ul>
+      </div>
     </section>
   </main>
 
-  <!-- Live captions -->
-  <div class="captions" id="captions" hidden aria-live="polite">
-    <span class="captions-who">Charchit</span>
-    <p class="captions-line" id="captionsLine"></p>
-  </div>
+  <footer class="site-footer wrap">
+    <p>© 2026 Charchit Sharma</p>
+    <p>Bengaluru <time id="clock">--:--</time> IST</p>
+  </footer>
 
-  <!-- Reactions float up from here -->
-  <div class="reactions" id="reactions" aria-hidden="true"></div>
-
-  <!-- Call controls: the site's navigation -->
-  <nav class="dock" aria-label="Call controls and sections">
-    <button type="button" class="dock-btn" id="camBtn" aria-pressed="false" data-tip="Switch to illustration">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="13" height="11" rx="2.5"/><path d="M15.5 10.5 21 7.5v9l-5.5-3z"/></svg>
-      <span class="sr">Switch portrait to illustration</span>
-    </button>
-    <button type="button" class="dock-btn" id="ccBtn" aria-pressed="false" data-tip="Captions">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3"/><path d="M10.4 10.3a2.4 2.4 0 1 0 0 3.4M17.4 10.3a2.4 2.4 0 1 0 0 3.4"/></svg>
-      <span class="sr">Turn on captions</span>
-    </button>
-    <button type="button" class="dock-btn" id="reactBtn" data-tip="React">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.3 14.2a4.6 4.6 0 0 0 7.4 0"/><path d="M9 9.6v.8M15 9.6v.8"/></svg>
-      <span class="sr">Send a reaction</span>
-    </button>
-    <a class="dock-btn" href="#work" data-tip="My desktop">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v7.5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-      <span class="sr">Work</span>
-    </a>
-    <a class="dock-btn" href="#timeline" data-tip="Calendar">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
-      <span class="sr">Timeline</span>
-    </a>
-    <a class="dock-btn dock-btn--leave" href="#contact" data-tip="Leave call">
-      <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M2.6 13.2c5.2-4.6 13.6-4.6 18.8 0 .4.4.5 1 .1 1.5l-1.6 1.9c-.4.4-1 .5-1.5.2l-2.7-1.5c-.4-.2-.6-.7-.5-1.1l.3-1.6c-2.2-.7-4.6-.7-6.8 0l.3 1.6c.1.4-.1.9-.5 1.1l-2.7 1.5c-.5.3-1.1.2-1.5-.2l-1.6-1.9c-.4-.5-.3-1.1.1-1.5z"/></svg>
-      <span class="sr">Say goodbye</span>
-    </a>
-  </nav>
-
-  <script src="./assets/portraits.js?v=20260930"></script>
-  <script src="./script.js?v=20260930"></script>
+  <script src="./script.js?v=20261114d"></script>
 </body>
 
 </html>

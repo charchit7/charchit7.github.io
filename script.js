@@ -1,154 +1,118 @@
-// Call-screen site: dock controls, captions, reactions, desktop files, clock, portrait.
-document.documentElement.classList.add('js');
+// Header hairline, section reveals, nav state, Bengaluru clock, and the portrait.
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-// Stagger for the lettering
-document.querySelectorAll('.hello').forEach((h) => {
-  h.querySelectorAll('span').forEach((s, i) => s.style.setProperty('--i', i));
-});
-
-// Briefly ring a tile, like the active-speaker border
-window.speak = function (tile) {
-  if (!tile) return;
-  tile.classList.add('is-speaking');
-  clearTimeout(tile._speakTimer);
-  tile._speakTimer = setTimeout(() => tile.classList.remove('is-speaking'), 1400);
-};
-
-// Clock in the desktop menu bar (Bengaluru time)
+// Header gains a hairline once the page has moved
 (function () {
-  const els = [document.getElementById('clock'), document.getElementById('stampTime')].filter(Boolean);
-  if (!els.length) return;
+  const header = document.getElementById('siteHeader');
+  if (!header) return;
+  const update = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+})();
+
+// Reveal on scroll, staggered among siblings that enter together
+(function () {
+  const items = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach((el) => el.classList.add('is-in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    let n = 0;
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.style.setProperty('--d', n++);
+      entry.target.classList.add('is-in');
+      io.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  items.forEach((el) => io.observe(el));
+})();
+
+// Mark the section in view in the nav
+(function () {
+  const links = [...document.querySelectorAll('.site-nav a')];
+  const byId = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
+  const sections = [...document.querySelectorAll('main section[id]')];
+  if (!sections.length) return;
+
+  function update() {
+    const line = window.innerHeight * 0.35;
+    let current = null;
+    sections.forEach((s) => {
+      if (s.getBoundingClientRect().top <= line) current = s.id;
+    });
+    // Short final section: treat the page bottom as "contact"
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      current = sections[sections.length - 1].id;
+    }
+    links.forEach((a) => a.removeAttribute('aria-current'));
+    const active = byId.get(current);
+    if (active) active.setAttribute('aria-current', 'true');
+  }
+
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+})();
+
+// Local time in Bengaluru
+(function () {
+  const el = document.getElementById('clock');
+  if (!el) return;
   const fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' });
-  const tick = () => { const t = fmt.format(new Date()); els.forEach((el) => { el.textContent = t; }); };
+  const tick = () => { el.textContent = fmt.format(new Date()); };
   tick();
   setInterval(tick, 15000);
 })();
 
-// Desktop: select a file to see its info; double-click opens it
+// Copy the email address, for visitors without a mail client set up
 (function () {
-  const files = document.querySelectorAll('.file');
-  const meta = document.getElementById('infoMeta');
-  const title = document.getElementById('infoTitle');
-  const desc = document.getElementById('infoDesc');
-  const open = document.getElementById('infoOpen');
-
-  files.forEach((f) => {
-    f.addEventListener('click', () => {
-      files.forEach((o) => o.setAttribute('aria-pressed', o === f ? 'true' : 'false'));
-      meta.textContent = f.dataset.meta;
-      title.textContent = f.dataset.title;
-      desc.textContent = f.dataset.desc;
-      open.href = f.dataset.href;
-    });
-    f.addEventListener('dblclick', () => window.open(f.dataset.href, '_blank', 'noopener'));
-  });
-})();
-
-// Captions: a short introduction, line by line
-(function () {
-  const btn = document.getElementById('ccBtn');
-  const box = document.getElementById('captions');
-  const line = document.getElementById('captionsLine');
-  if (!btn || !box) return;
-
-  const lines = [
-    "Hi, I'm Charchit.",
-    "I'm an applied scientist at Glance, part of InMobi Group, in Bengaluru.",
-    'I work on image generation: virtual try-on and identity-preserving edits.',
-    'And on a harder question: did the model actually get better?',
-    'Before this: IDfy, Avataar, and IIT Hyderabad.',
-    'Thanks for dropping in.',
-  ];
-  let timers = [];
-
-  function clear() {
-    timers.forEach(clearTimeout);
-    timers = [];
+  const btn = document.getElementById('copyEmail');
+  if (!btn) return;
+  if (!navigator.clipboard) {
+    btn.hidden = true;
+    return;
   }
-
-  function typeLine(text, done) {
-    if (prefersReduced.matches) {
-      line.textContent = text;
-      timers.push(setTimeout(done, 2600));
-      return;
+  const idle = btn.textContent;
+  let timer;
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      btn.textContent = 'Copied';
+    } catch (err) {
+      btn.textContent = 'Press ⌘C to copy';
     }
-    let i = 0;
-    line.textContent = '';
-    const step = () => {
-      i += 1;
-      line.textContent = text.slice(0, i);
-      if (i < text.length) timers.push(setTimeout(step, 28));
-      else timers.push(setTimeout(done, 1500));
-    };
-    step();
-  }
-
-  function play(n) {
-    if (n >= lines.length) return; // leave the last line up
-    typeLine(lines[n], () => play(n + 1));
-  }
-
-  btn.addEventListener('click', () => {
-    const on = btn.getAttribute('aria-pressed') !== 'true';
-    btn.setAttribute('aria-pressed', String(on));
-    btn.querySelector('.sr').textContent = on ? 'Turn off captions' : 'Turn on captions';
-    clear();
-    box.hidden = !on;
-    if (on) {
-      window.speak(document.querySelector('.tile--me'));
-      play(0);
-    }
+    clearTimeout(timer);
+    timer = setTimeout(() => { btn.textContent = idle; }, 1800);
   });
 })();
 
-// Reactions float up from the dock
-(function () {
-  const btn = document.getElementById('reactBtn');
-  const layer = document.getElementById('reactions');
-  if (!btn || !layer) return;
-  const emoji = ['👋', '🎉', '💙', '🤯', '👏', '✨'];
-  let n = 0;
-  btn.addEventListener('click', () => {
-    const r = document.createElement('span');
-    r.className = 'reaction';
-    r.textContent = emoji[n++ % emoji.length];
-    r.style.setProperty('--dx', Math.round((Math.random() - 0.5) * 80) + 'px');
-    layer.appendChild(r);
-    r.addEventListener('animationend', () => r.remove());
-    const tiles = document.querySelectorAll('.tile');
-    window.speak(tiles[Math.floor(Math.random() * tiles.length)]);
-  });
-})();
-
-// Portrait: sampled from Gaussian noise on load, and switched between the photo
+// Portrait: resolved from Gaussian noise on load, and switched between the photo
 // and the illustration SDEdit-style (noise partway, then denoise toward the other).
+// If the canvas can't read pixels (e.g. opened from disk), the images cross-fade instead.
 (function () {
+  const root = document.getElementById('portrait');
   const canvas = document.getElementById('portraitCanvas');
-  const button = document.getElementById('camBtn');
   const readout = document.getElementById('stepReadout');
-  if (!canvas || !button) return;
+  if (!root || !canvas) return;
 
-  const figure = canvas.closest('.tile');
+  const buttons = [...root.querySelectorAll('[data-portrait]')];
+  const imgs = {
+    photo: root.querySelector('img[data-which="photo"]'),
+    illustration: root.querySelector('img[data-which="illustration"]'),
+  };
+  const labels = {
+    photo: imgs.photo.alt,
+    illustration: 'Anime-style illustration of Charchit Sharma in a beanie, sunglasses and scarf',
+  };
+
   const ctx = canvas.getContext('2d', { willReadFrequently: true });
   const W = canvas.width;
   const H = canvas.height;
   const N = W * H;
   const T = 1000;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-  const embedded = window.PORTRAITS || {};
-  const sources = {
-    photo: {
-      src: embedded.photo || './assets/portrait-photo.jpg',
-      label: 'Charchit Sharma in a beanie and puffer jacket, mountains behind him',
-    },
-    illustration: {
-      src: embedded.illustration || './assets/portrait-illustration.jpg',
-      label: 'Anime-style illustration of Charchit Sharma in a beanie, sunglasses and scarf',
-    },
-  };
+  const START = 0.6; // noise level the portrait resolves from on load
 
   // Cosine noise schedule (Nichol & Dhariwal, 2021)
   const alphaBar = (t) => {
@@ -157,35 +121,30 @@ window.speak = function (tile) {
     return f(t) / f(0);
   };
 
-  // One fixed draw of Gaussian noise per pixel and channel (Box–Muller)
+  // One fixed draw of Gaussian noise per pixel (Box–Muller), shared across channels
+  // so the grain reads as neutral film noise rather than colour static
   const eps = new Float32Array(N * 3);
-  for (let i = 0; i < eps.length; i += 2) {
+  for (let p = 0; p < N; p++) {
     const u = 1 - Math.random();
     const v = Math.random();
-    const r = Math.sqrt(-2 * Math.log(u));
-    eps[i] = r * Math.cos(2 * Math.PI * v);
-    if (i + 1 < eps.length) eps[i + 1] = r * Math.sin(2 * Math.PI * v);
+    const z = Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+    eps[p * 3] = eps[p * 3 + 1] = eps[p * 3 + 2] = z;
   }
 
   const frame = ctx.createImageData(W, H);
   for (let i = 3; i < frame.data.length; i += 4) frame.data[i] = 255;
 
-  function loadPixels(src) {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      img.onload = () => {
-        ctx.drawImage(img, 0, 0, W, H);
-        const d = ctx.getImageData(0, 0, W, H).data; // throws on file:// in some browsers
-        const x0 = new Float32Array(N * 3);
-        for (let p = 0, q = 0; p < N; p++, q += 4) {
-          x0[p * 3] = d[q] / 127.5 - 1;
-          x0[p * 3 + 1] = d[q + 1] / 127.5 - 1;
-          x0[p * 3 + 2] = d[q + 2] / 127.5 - 1;
-        }
-        resolve(x0);
-      };
-      img.onerror = reject;
-      img.src = src;
+  function loadPixels(img) {
+    return img.decode().then(() => {
+      ctx.drawImage(img, 0, 0, W, H);
+      const d = ctx.getImageData(0, 0, W, H).data; // throws on file:// in some browsers
+      const x0 = new Float32Array(N * 3);
+      for (let p = 0, q = 0; p < N; p++, q += 4) {
+        x0[p * 3] = d[q] / 127.5 - 1;
+        x0[p * 3 + 1] = d[q + 1] / 127.5 - 1;
+        x0[p * 3 + 2] = d[q + 2] / 127.5 - 1;
+      }
+      return x0;
     });
   }
 
@@ -211,7 +170,7 @@ window.speak = function (tile) {
     return new Promise((resolve) => {
       const start = performance.now();
       function tick(now) {
-        const u = Math.min(1, (now - start) / duration);
+        const u = Math.min(1, Math.max(0, (now - start) / duration));
         step(u);
         if (u < 1) requestAnimationFrame(tick);
         else resolve();
@@ -222,73 +181,66 @@ window.speak = function (tile) {
 
   const smooth = (x) => x * x * (3 - 2 * x);
 
-  let pixels = {};
+  const pixels = {};
+  let live = false;
   let current = 'photo';
   let busy = false;
 
-  function setLabel(which) {
-    canvas.setAttribute('aria-label', sources[which].label);
-    const tip = which === 'photo' ? 'Switch to illustration' : 'Switch to photo';
-    button.dataset.tip = tip;
-    button.querySelector('.sr').textContent = tip.replace('Switch', 'Switch portrait');
-    button.setAttribute('aria-pressed', which === 'illustration' ? 'true' : 'false');
+  function setCurrent(which) {
+    current = which;
+    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.portrait === which)));
+    imgs.photo.alt = labels[which];
+    root.classList.toggle('show-illustration', which === 'illustration');
   }
 
   async function init() {
     try {
-      pixels.photo = await loadPixels(sources.photo.src);
-      pixels.illustration = await loadPixels(sources.illustration.src);
+      pixels.photo = await loadPixels(imgs.photo);
+      pixels.illustration = await loadPixels(imgs.illustration);
+      live = true;
     } catch (err) {
-      // Canvas unavailable: keep the plain photo, hide the toggle
-      button.hidden = true;
       if (readout) readout.hidden = true;
+      root.classList.add('is-ready');
       return;
     }
 
-    figure.classList.add('is-live');
-
     if (reduceMotion.matches) {
       render(0, pixels.photo);
+      root.classList.add('is-live', 'is-ready');
       return;
     }
 
     busy = true;
-    
-    render(1, pixels.photo);
-    await animate(2600, (u) => render(1 - u, pixels.photo));
+    render(START, pixels.photo);
+    root.classList.add('is-live', 'is-ready');
+    await animate(2400, (u) => render(START * (1 - smooth(u)), pixels.photo));
     busy = false;
-    
   }
 
-  button.addEventListener('click', async () => {
-    if (busy || !pixels.photo) return;
-    const next = current === 'photo' ? 'illustration' : 'photo';
-    window.speak && window.speak(figure);
-    if (figure.getBoundingClientRect().bottom < 0) {
-      document.getElementById('top').scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth' });
-    }
+  async function switchTo(next) {
+    if (busy || next === current) return;
     const a = pixels[current];
     const b = pixels[next];
+    setCurrent(next);
+    if (!live) return; // CSS cross-fade handles it
 
     if (reduceMotion.matches) {
       render(0, b);
-    } else {
-      busy = true;
-      
-      const peak = 0.62; // how far to re-noise before denoising toward the other image
-      await animate(1800, (u) => {
-        const t = u < 0.4 ? peak * smooth(u / 0.4) : peak * (1 - smooth((u - 0.4) / 0.6));
-        const mix = smooth(Math.min(1, Math.max(0, (u - 0.3) / 0.25)));
-        render(t, a, b, mix);
-      });
-      render(0, b);
-      busy = false;
-      
+      return;
     }
 
-    current = next;
-    setLabel(next);
-  });
+    busy = true;
+    const peak = 0.55; // how far to re-noise before denoising toward the other image
+    await animate(1800, (u) => {
+      const t = u < 0.4 ? peak * smooth(u / 0.4) : peak * (1 - smooth((u - 0.4) / 0.6));
+      const mix = smooth(Math.min(1, Math.max(0, (u - 0.3) / 0.25)));
+      render(t, a, b, mix);
+    });
+    render(0, b);
+    busy = false;
+  }
+
+  buttons.forEach((b) => b.addEventListener('click', () => switchTo(b.dataset.portrait)));
 
   init();
 })();
