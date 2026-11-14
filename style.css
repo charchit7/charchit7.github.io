@@ -189,8 +189,8 @@ a {
    Hero
 ------------------------------------------------------------------- */
 .hero {
-  padding-top: calc(var(--header-h) + clamp(2.5rem, 7vh, 5rem));
-  padding-bottom: clamp(2.5rem, 6vh, 4rem);
+  padding-top: calc(var(--header-h) + clamp(2rem, 5vh, 3.5rem));
+  padding-bottom: clamp(2rem, 4vh, 3rem);
   display: grid;
   grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
   column-gap: clamp(2rem, 7vw, 6rem);
@@ -208,10 +208,10 @@ a {
 }
 
 .hero-name {
-  margin-top: 1.75rem;
+  margin-top: 1.25rem;
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(3.75rem, 11.5vw, 8.5rem);
+  font-size: clamp(3.25rem, min(8vw, 12vh), 6rem);
   line-height: 0.92;
   letter-spacing: -0.035em;
   font-optical-sizing: auto;
@@ -222,8 +222,8 @@ a {
 }
 
 .hero-lede {
-  margin-top: clamp(1.75rem, 4vh, 2.75rem);
-  max-width: 30rem;
+  margin-top: clamp(1.25rem, 3vh, 2rem);
+  max-width: 34rem;
   font-family: var(--serif);
   font-size: clamp(1.3125rem, 2.1vw, 1.625rem);
   font-weight: 400;
@@ -292,14 +292,14 @@ a {
 }
 
 .hero-actions {
-  margin-top: clamp(2rem, 5vh, 3rem);
+  margin-top: clamp(1.5rem, 3.5vh, 2.25rem);
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
 
 .hero-links {
-  margin-top: 1.75rem;
+  margin-top: 1.25rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.75rem;
@@ -321,7 +321,7 @@ a {
 /* Portrait */
 .portrait {
   width: 100%;
-  max-width: 22rem;
+  max-width: 19rem;
   justify-self: end;
 }
 
@@ -409,7 +409,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: clamp(1.5rem, 4vw, 3rem);
-  padding-block: clamp(1.75rem, 3vw, 2.25rem);
+  padding-block: 1.5rem;
   border-top: 1px solid var(--line);
 }
 
@@ -514,7 +514,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
   column-gap: clamp(1.5rem, 4vw, 3rem);
-  padding-block: clamp(4.5rem, 11vw, 8.5rem);
+  padding-block: clamp(3rem, 6vw, 5rem);
   position: relative;
 }
 
@@ -528,12 +528,24 @@ a {
   background: var(--line);
 }
 
+/* A full-width band in the deeper paper tone, for rhythm between light sections */
+.band {
+  background: var(--surface);
+}
+
+.band .section::before {
+  display: none;
+}
+
 .label {
   padding-top: 0.6rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent);
 }
 
 .sublabel {
-  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--line);
 }
@@ -708,54 +720,125 @@ a {
   text-align: right;
 }
 
-/* Drawings: matted like prints, hung slightly off-level */
-.plates {
-  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+/* Drawings: a dark room in an otherwise light page, so the colour carries */
+.gallery {
+  --g-bg: #121214;
+  --g-ink: #f3f1ec;
+  --g-muted: #a3a09a;
+  --g-line: rgb(243 241 236 / 0.16);
+  background: var(--g-bg);
+  color: var(--g-ink);
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.gallery + .section::before {
+  display: none;
+}
+
+.gallery-head {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(0.75rem, 2vw, 1.5rem);
+  grid-template-columns: minmax(0, 3fr) minmax(0, 6fr) minmax(0, 3fr);
+  column-gap: clamp(1.5rem, 4vw, 3rem);
   align-items: start;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
-.plates li:nth-child(2) {
-  margin-top: clamp(1.5rem, 4vw, 3rem);
+.gallery-head .label {
+  color: var(--g-ink);
 }
 
-.plate-mat {
-  padding: clamp(0.625rem, 1.4vw, 1rem);
-  background: var(--surface);
-  border-radius: 3px;
+.gallery-head .btn {
+  justify-self: end;
+  margin-top: 0.35rem;
 }
 
-.plate-mat img {
+.btn--light {
+  background: transparent;
+  color: var(--g-ink);
+  border-color: var(--g-line);
+}
+
+.btn--light:hover {
+  background: var(--g-ink);
+  color: var(--g-bg);
+  border-color: var(--g-ink);
+}
+
+.art {
+  display: block;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #1c1c1f;
+}
+
+.art img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
-  outline: 1px solid var(--line);
-  transition: transform 900ms var(--ease);
-}
-
-.plate figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.8125rem;
-  line-height: 1.45;
-  color: var(--ink-3);
-  text-wrap: pretty;
-}
-
-.plate-num {
-  margin-right: 0.25rem;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 0.9375rem;
-  color: var(--ink);
+  transition: transform 1200ms var(--ease);
 }
 
 @media (hover: hover) {
-  .plate:hover img {
-    transform: translateY(-3px);
+  .art:hover img {
+    transform: scale(1.03);
   }
+}
+
+.art--wide {
+  aspect-ratio: 1440 / 494;
+}
+
+.gallery-grid {
+  margin-top: clamp(0.75rem, 1.6vw, 1.25rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(0.75rem, 1.6vw, 1.25rem);
+}
+
+.art--lead {
+  aspect-ratio: 1200 / 1083;
+}
+
+.gallery-small {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(0.75rem, 1.6vw, 1.25rem);
+}
+
+.art--more {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid var(--g-line);
+  background: none;
+  color: var(--g-ink);
+  font-family: var(--serif);
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: background-color 300ms var(--ease), color 300ms var(--ease);
+}
+
+.art--more .btn-arrow {
+  align-self: flex-end;
+  font-family: var(--sans);
+  font-size: 1.125rem;
+}
+
+.art--more:hover {
+  background: var(--g-ink);
+  color: var(--g-bg);
+}
+
+.art--more:hover .btn-arrow {
+  transform: translate(3px, -3px);
+}
+
+.gallery :focus-visible {
+  outline-color: var(--g-ink);
 }
 
 /* Contact */
@@ -911,6 +994,24 @@ a {
     row-gap: 1.5rem;
   }
 
+  .gallery-head {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.5rem;
+  }
+
+  .gallery-head .btn {
+    justify-self: start;
+    margin-top: 0.5rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .art {
+    border-radius: 14px;
+  }
+
   .facts dd {
     max-width: 30rem;
   }
@@ -975,13 +1076,11 @@ a {
     display: none;
   }
 
-  .plates {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 1.75rem;
-    max-width: 22rem;
+  .gallery-small {
+    grid-template-rows: none;
   }
 
-  .plates li:nth-child(2) {
-    margin-top: 0;
+  .gallery-small .art {
+    aspect-ratio: 4 / 3;
   }
 }

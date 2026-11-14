@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=20261114d">
+  <link rel="stylesheet" href="./style.css?v=20261115h">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 
@@ -32,9 +32,9 @@
         <nav class="site-nav" aria-label="Sections">
           <a href="#paper">Paper</a>
           <a href="#research" class="nav-wide">Research</a>
-          <a href="#drawings" class="nav-wide">Drawings</a>
           <a href="#work">Work</a>
           <a href="#timeline" class="nav-wide">Timeline</a>
+          <a href="#drawings" class="nav-wide">Drawings</a>
         </nav>
         <a class="btn btn--small" href="#contact">Get in touch</a>
       </div>
@@ -136,44 +136,13 @@
             <p>Turning catalog-style photos into natural, personal ones without losing the person in them.</p>
           </li>
           <li data-reveal>
+            <h4>What did the model actually learn?</h4>
+            <p>Exploring representation learning and explainability, including data attribution: tracing a generated
+              image back to the training data that shaped it.</p>
+          </li>
+          <li data-reveal>
             <h4>Did the model get better?</h4>
-            <p>Using item response theory to measure generative models and their data more carefully.</p>
-          </li>
-          <li data-reveal>
-            <h4>Where did that image come from?</h4>
-            <p>Data attribution for generative models: tracing a generated image back to the training data that
-              shaped it.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Drawings -->
-    <section class="section wrap" id="drawings" aria-labelledby="drawings-label">
-      <h2 class="label" id="drawings-label" data-reveal>Drawings</h2>
-      <div class="section-body">
-        <p class="statement statement--short" data-reveal>Away from the models, I draw. These three are mine.</p>
-        <ul class="plates">
-          <li data-reveal>
-            <figure class="plate">
-              <div class="plate-mat"><img src="./assets/tile-sky.jpg" width="338" height="253" loading="lazy"
-                  alt="My drawing of a boy looking up into a sky full of stars"></div>
-              <figcaption><span class="plate-num">i.</span> A boy looking up into a sky full of stars</figcaption>
-            </figure>
-          </li>
-          <li data-reveal>
-            <figure class="plate">
-              <div class="plate-mat"><img src="./assets/tile-gold.jpg" width="338" height="253" loading="lazy"
-                  alt="My drawing of an elephant figure glowing in the dark, ringed by golden light"></div>
-              <figcaption><span class="plate-num">ii.</span> An elephant figure glowing in the dark</figcaption>
-            </figure>
-          </li>
-          <li data-reveal>
-            <figure class="plate">
-              <div class="plate-mat"><img src="./assets/tile-red.jpg" width="338" height="253" loading="lazy"
-                  alt="My drawing of a red-haired character with a golden eye"></div>
-              <figcaption><span class="plate-num">iii.</span> A red-haired character with a golden eye</figcaption>
-            </figure>
+            <p>Evaluating generative models and the data behind them more carefully than a single headline number.</p>
           </li>
         </ul>
       </div>
@@ -258,6 +227,7 @@
     </section>
 
     <!-- Timeline -->
+    <div class="band">
     <section class="section wrap" id="timeline" aria-labelledby="timeline-label">
       <h2 class="label" id="timeline-label" data-reveal>Timeline</h2>
       <div class="section-body">
@@ -265,7 +235,7 @@
           <li class="year" data-reveal>
             <h3 class="year-num">2026</h3>
             <ul class="events">
-              <li><span class="event-when">Sep</span><span class="event-what">Presenting at ECCV, Malmö</span><span class="event-kind">Talk</span></li>
+              <li><span class="event-when">Sep</span><span class="event-what">Presented at ECCV, Malmö</span><span class="event-kind">Talk</span></li>
               <li><span class="event-when"></span><span class="event-what">eXCV workshop paper at ECCV</span><span class="event-kind">Paper</span></li>
               <li><span class="event-when">Jul</span><span class="event-what">Applied Scientist III, Glance</span><span class="event-kind">Work</span></li>
             </ul>
@@ -293,6 +263,50 @@
             </ul>
           </li>
         </ol>
+      </div>
+    </section>
+    </div>
+
+    <!-- Drawings -->
+    <section class="gallery" id="drawings" aria-labelledby="drawings-label">
+      <div class="wrap">
+        <div class="gallery-head">
+          <h2 class="label" id="drawings-label" data-reveal>Drawings</h2>
+          <p class="statement statement--short" data-reveal>Away from the models, I draw. Everything here is my own
+            work.</p>
+          <a class="btn btn--light" href="https://www.instagram.com/charchit.art/" data-reveal>More on Instagram
+            <span class="btn-arrow" aria-hidden="true">↗</span></a>
+        </div>
+
+        <figure class="art art--wide" data-reveal>
+          <img src="./assets/art/eyes.jpg" width="1440" height="494" loading="lazy"
+            alt="My drawing: a close-up of a woman's brown eyes, a red bindi between her brows and white flowers in her hair">
+        </figure>
+
+        <div class="gallery-grid">
+          <figure class="art art--lead" data-reveal>
+            <img src="./assets/art/portrait-bindi.jpg" width="1200" height="1083" loading="lazy"
+              alt="My drawing: portrait of a woman glancing sideways, with a red bindi, a nose ring and white flowers in her hair">
+          </figure>
+          <div class="gallery-small">
+            <figure class="art" data-reveal>
+              <img src="./assets/tile-gold.jpg" width="338" height="253" loading="lazy"
+                alt="My drawing: Ganesha in black, glowing in the dark and ringed by golden light">
+            </figure>
+            <figure class="art" data-reveal>
+              <img src="./assets/tile-red.jpg" width="338" height="253" loading="lazy"
+                alt="My drawing: a red-haired character with a golden eye">
+            </figure>
+            <figure class="art" data-reveal>
+              <img src="./assets/tile-sky.jpg" width="338" height="253" loading="lazy"
+                alt="My drawing: a boy looking up into a sky full of stars">
+            </figure>
+            <a class="art art--more" href="https://www.instagram.com/charchit.art/" data-reveal>
+              <span>See the rest<br>on Instagram</span>
+              <span class="btn-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -324,7 +338,7 @@
     <p>Bengaluru <time id="clock">--:--</time> IST</p>
   </footer>
 
-  <script src="./script.js?v=20261114d"></script>
+  <script src="./script.js?v=20261115h"></script>
 </body>
 
 </html>
